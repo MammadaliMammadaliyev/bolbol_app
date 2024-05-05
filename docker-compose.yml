@@ -1,0 +1,96 @@
+version: '3'
+
+services:
+    # postgres:
+    #     container_name: bolbol_postgres
+    #     image: postgres:12
+    #     restart: 'always'
+    #     volumes:
+    #         - bolbol-postgres:/var/lib/postgresql/data
+    #     env_file: .env
+    #     networks:
+    #         - bolbol-app-network
+
+    # redis:
+    #     container_name: bolbol_redis
+    #     image: redis:5
+    #     restart: 'always'
+    #     env_file: .env
+    #     volumes:
+    #         - bolbol-redis:/var/lib/redis
+    #     networks:
+    #         - bolbol-app-network
+
+    app:
+        container_name: bolbol_app
+        build:
+            context: .
+            dockerfile: Dockerfile.web
+        restart: 'always'
+        env_file: .env
+        volumes:
+            - bolbol-media:/code/media
+        networks:
+            - bolbol-app-network
+        ports:
+            - '80:80'
+        # depends_on:
+        #     - postgres
+        #     - redis
+
+    # celery: &celery-base
+    #     container_name: bolbol_celery
+    #     build:
+    #         context: .
+    #         dockerfile: Dockerfile.celery
+    #     restart: 'always'
+    #     env_file: .env
+    #     volumes:
+    #         - bolbol-media:/code/media
+    #     networks:
+    #         - bolbol-app-network
+    #     depends_on:
+            # - redis
+
+    # celery_elastic:
+    #     <<: *celery-base
+    #     container_name: bolbol_celery_elastic
+    #     command: celery -A bolbol worker --loglevel=INFO -Q elasticsearch
+
+    # celery_wishlist:
+    #     <<: *celery-base
+    #     container_name: bolbol_celery_wishlist
+    #     command: celery -A bolbol worker --loglevel=INFO -Q wishlist
+
+    # celery_notification:
+    #     <<: *celery-base
+    #     container_name: bolbol_celery_notification
+    #     command: celery -A bolbol worker --loglevel=INFO -Q notification
+
+    
+    # celery_expire_checker:
+    #     <<: *celery-base
+    #     container_name: bolbol_celery_expire_checker
+    #     command: celery -A bolbol worker --loglevel=INFO -Q expire_checker
+
+    # elasticsearch:
+    #     container_name: bolbol_elasticsearch
+    #     image: elasticsearch:7.12.1
+    #     networks:
+    #         - bolbol-app-network
+    #     environment:
+    #         - discovery.type=single-node
+    #     ports:
+    #         - 9200:9200
+    #     volumes:
+    #         - bolbol-elasticsearch:/usr/share/elasticsearch/data
+
+networks:
+    bolbol-app-network:
+        driver: bridge
+
+volumes:
+    # bolbol-postgres:
+    # bolbol-redis:
+    bolbol-media:
+    # bolbol-elasticsearch:

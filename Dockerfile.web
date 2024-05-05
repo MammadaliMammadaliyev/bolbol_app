@@ -1,0 +1,25 @@
+FROM python:3.11
+ENV PYTHONUNBUFFERED 1
+
+RUN \
+   apt-get -y update  && apt-get -y upgrade && apt-get -y dist-upgrade
+
+RUN apt-get install uwsgi -y
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6 -y
+
+WORKDIR /code
+
+COPY requirements.txt requirements.txt
+
+RUN \
+    pip install --upgrade pip setuptools wheel \
+    && pip install --upgrade pip \
+    && pip install --upgrade pip setuptools wheel \
+    && pip install -r requirements.txt
+
+COPY ./bolbol .
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+
+# CMD ["uwsgi", "--ini", "uwsgi.ini"]
