@@ -16,70 +16,44 @@
     <main>
       <div class="main_container">
         <section id="home_filters_sec">
-          <div class="container-fluid">
-            <section class="d-md-block" id="neql_search">
-              <div class="main_container">
-                <div class="container-fluid forpadding0">
-                  <div class="row" id="dekstop_search_bar_row">
-                    <div class="" id="dekstop_search_bar">
-                      <div class="search">
-                        <form action="">
-                          <div class="input-group search__group">
-                            <input
-                              type="text"
-                              class="form-control search__input typed"
-                              id="search_typed"
-                            />
-                            <div class="input-group-append search__append">
-                              <button
-                                class="search__btn"
-                                type="button"
-                              ></button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <div class="category">
-              <div class="category__list">
-                <a href="{% url 'web:category-transport' %}" class="category__item">
-                  <img
-                    src="{% static 'web/bolbol_icons_nəqliyyat.svg' %}"
-                    alt="category-icon"
-                  />
-                  Nəqliyyat
-                </a>
-                <a href="dashinmaz_emlak_checks.html" class="category__item">
+            <div class="container-fluid">
+                {% include 'partials/search_bar.html' %}
+                <div class="category">
+                <div class="category__list">
+                    <a href="{% url 'web:category-transport' %}" class="category__item">
+                    <img
+                        src="{% static 'web/bolbol_icons_nəqliyyat.svg' %}"
+                        alt="category-icon"
+                    />
+                    Nəqliyyat
+                    </a>
+                    <a href="{% url 'web:category-estate' %}" class="category__item">
                   <img
                     src="{% static 'web/img/categories/category1.svg' %}"
                     alt="category-icon"
-                  />
-                  Daşınmaz Əmlak
+                />
+                Daşınmaz Əmlak
                 </a>
                 <a href="" class="category__item">
-                  <img
+                <img
                     src="	{% static 'web/img/categories/category1.svg' %}"
                     alt="category-icon"
-                  />
-                  Geyim
+                />
+                Geyim
                 </a>
                 <a href="" class="category__item">
-                  <img
+                <img
                     src="{% static 'web/img/categories/category1.svg' %}"
                     alt="category-icon"
-                  />
-                  Uşaq aləmi
+                />
+                Uşaq aləmi
                 </a>
                 <a href="" class="category__item">
-                  <img
+                <img
                     src="{% static 'web/img/categories/category1.svg' %}"
                     alt="category-icon"
-                  />
-                  Kosmetika və sağlamlıq
+                />
+                Kosmetika və sağlamlıq
                 </a>
                 <a href="ish_elanlari.html" class="category__item">
                   <img

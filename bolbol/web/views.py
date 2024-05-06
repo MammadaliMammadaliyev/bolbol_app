@@ -7,3 +7,7 @@ class HomeView(generic.TemplateView):
 
 class CategoryTransportView(generic.TemplateView):
     template_name = "web/transport.html"
+
+
+class CategoryEstateView(generic.TemplateView):
+    template_name = "web/estate.html"

@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="az">
     {% include 'partials/head.html' %}
-
     <body>
     <!--[if lte IE 9]>
       <p class="browserupgrade">
@@ -13,48 +12,26 @@
     <![endif]-->
 
     {% include 'partials/header.html' %}
-
     <main>
-      <div class="main_container">
-        <div class="date_filter_bg"></div>
-        <div class="date_filter_overlay">
-          <div class="date_filter_header">
-            <div class="date_filter_header--inner">
-              <div class="date_filter_header-text">Çeşidləmə</div>
-              <div class="date_filter_header-icon" id="dateFilterClose">
-                <i class="fa-solid fa-x"></i>
+      <!-- <div class="row">
+        <div class="col-lg-5 col-md-9 mx-auto">
+          <div class="search">
+            <form action="">
+              <div class="input-group search__group">
+                <input
+                  type="text"
+                  class="form-control search__input typed"
+                  id=""
+                />
+                <div class="input-group-append search__append">
+                  <button class="search__btn" type="button"></button>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="date_filter_body">
-            <a href="#">
-              <div class="date_filter_select selected" data-id="date">
-                <div class="date_filter_select-name">Tarixə görə</div>
-                <span class="date_filter_select-radio"></span>
-              </div>
-            </a>
-            <a href="#"
-              ><div class="date_filter_select" data-id="date">
-                <div class="date_filter_select-name">Əvvəlcə ucuz</div>
-                <span class="date_filter_select-radio"></span></div
-            ></a>
-            <a href="#"
-              ><div class="date_filter_select" data-id="date">
-                <div class="date_filter_select-name">Əvvəlcə bahalı</div>
-                <span class="date_filter_select-radio"></span></div
-            ></a>
-            <a href="#"
-              ><div class="date_filter_select" data-id="date">
-                <div class="date_filter_select-name">Yürüş</div>
-                <span class="date_filter_select-radio"></span></div
-            ></a>
-            <a href="#"
-              ><div class="date_filter_select" data-id="date">
-                <div class="date_filter_select-name">Buraxılış ili</div>
-                <span class="date_filter_select-radio"></span></div
-            ></a>
+            </form>
           </div>
         </div>
+      </div> -->
+      <div class="main_container">
         <section class="d-md-block" id="neql_search">
           <div class="main_container">
             <div class="container-fluid forpadding0">
@@ -66,7 +43,7 @@
                         <input
                           type="text"
                           class="form-control search__input"
-                          id="transport-typed"
+                          id="estate-typed"
                         />
                         <div class="input-group-append search__append">
                           <button class="search__btn" type="button"></button>
@@ -79,34 +56,23 @@
             </div>
           </div>
         </section>
-        <h1 class="title_category">Nəqliyyat</h1>
-        <div class="desctop_filters">
-          <div class="form-group for_width20 grow-1 order-1">
-            <div class="dropdown" id="marks_drop_change">
-              <button class="dropdown__button markDropdown" data-value="marks">
-                Marka
-              </button>
-              <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <div class="dropdown__list_hero"></div>
-              <input
-                type="text"
-                name="select-category"
-                value=""
-                class="dropdown__input-hidden"
-              />
-            </div>
-          </div>
-          <div class="form-group for_width20 grow-1 order-2">
+        <h1 class="emlak_title">Daşınmaz əmlak</h1>
+      </div>
+      <div class="main_container">
+        <div class="emlak_filter">
+          <div class="fixed_width" id="emlakBuy">
             <div class="dropdown">
-              <button
-                class="dropdown__button empty"
-                data-value="models"
-                id="models-btn"
-              >
-                Model
+              <button class="dropdown__button" data-value="emkak-buy">
+                Alış
               </button>
               <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <ul class="dropdown__list" id="models"></ul>
+              <ul class="dropdown__list">
+                <p class="items_reset_btn">
+                  Sıfırla<i class="fa-sharp fa-solid fa-xmark"></i>
+                </p>
+                <li class="dropdown__list-item">Alış</li>
+                <li class="dropdown__list-item">Kirayə</li>
+              </ul>
               <input
                 type="text"
                 name="select-category"
@@ -115,9 +81,75 @@
               />
             </div>
           </div>
-          <div class="form-group for_width_big grow-1 order-3">
+          <div class="fixed_width" id="emlakHouse">
+            <div class="dropdown">
+              <button class="dropdown__button" data-value="emkak-house">
+                Yeni tikili
+              </button>
+              <i class="fa-solid fa-angle-down drop_arrow"></i>
+              <ul class="dropdown__list dropdown_otaq">
+                <p class="items_reset_btn">
+                  Sıfırla<i class="fa-sharp fa-solid fa-xmark"></i>
+                </p>
+                <li class="dropdown__list-item">Yeni tikili</li>
+                <li class="dropdown__list-item">Mənzil</li>
+                <li class="dropdown__list-item">Köhnə tikili</li>
+                <li class="dropdown__list-item">Həyət / Bağ evi</li>
+                <li class="dropdown__list-item">Ofis</li>
+                <li class="dropdown__list-item">Qaraj</li>
+                <li class="dropdown__list-item">Torpaq</li>
+                <li class="dropdown__list-item">Obyekt</li>
+              </ul>
+              <input
+                type="text"
+                name="select-category"
+                value=""
+                class="dropdown__input-hidden"
+              />
+            </div>
+          </div>
+          <div class="fixed_width" id="emlakRoom" data-value="emlak_room">
+            <p id="checkedEmlakRoom" style="pointer-events: none !important">
+              Otaq sayı
+            </p>
+            <i
+              class="fa-solid fa-angle-down"
+              style="pointer-events: none !important"
+              id="emlakRoomArrow"
+            ></i>
+            <ul
+              class="emlak_room_dropdown emlakDesktopRoom"
+              id="emlakRoomDropdownDesktop"
+            >
+              <label for="otherRoom">
+                <input type="radio" id="otherRoom" checked="false" />
+                İstənilən otaq sayı
+              </label>
+              <label for="room1">
+                <input type="checkbox" id="room1" />
+                1 otaqlı
+              </label>
+              <label for="room2">
+                <input type="checkbox" id="room2" />
+                2 otaqlı
+              </label>
+              <label for="room3">
+                <input type="checkbox" id="room3" />
+                3 otaqlı
+              </label>
+              <label for="room4">
+                <input type="checkbox" id="room4" />
+                4 otaqlı
+              </label>
+              <label for="room5">
+                <input type="checkbox" id="room5" />
+                5 otaq və daha çox
+              </label>
+            </ul>
+          </div>
+          <div class="fixed_width grow-1 emlak_price">
             <div class="unersal_inputs">
-              <label for="price_input_min" data-value="price_value">
+              <label for="price_input_min">
                 <input type="text" id="price_input_min" />
                 <p>Qiymət, min</p>
               </label>
@@ -127,36 +159,89 @@
               </label>
             </div>
           </div>
-          <div
-            class="form-group for_width_small grow-1 order-4"
-            id="color_group"
-          >
+          <div class="fixed_width emlak_repair">
+            <label for="hamisi_input">
+              <input type="radio" id="hamisi_input" name="oooo" checked />
+              <p>Hamısı</p>
+            </label>
+            <label for="temirli_input">
+              <input type="radio" id="temirli_input" name="oooo" />
+              <p>Təmirli</p>
+            </label>
+            <label for="temirsiz_input">
+              <input type="radio" id="temirsiz_input" name="oooo" />
+              <p>Təmirsiz</p>
+            </label>
+          </div>
+          <div class="fixed_width emlak_place">
+            <div class="unersal_inputs">
+              <label for="area_input_min">
+                <input type="text" id="area_input_min" />
+                <p>Sahə(m<sup>2</sup>) , min</p>
+              </label>
+              <label for="area_input_max">
+                <input type="text" id="area_input_max" />
+                <p>maks</p>
+              </label>
+            </div>
+          </div>
+          <div class="fixed_width emlak_floor">
+            <div class="unersal_inputs">
+              <label for="floor_input_min">
+                <input type="text" id="floor_input_min" />
+                <p>Mərtəbə, min</p>
+              </label>
+              <label for="floor_input_max">
+                <input type="text" id="floor_input_max" />
+                <p>maks</p>
+              </label>
+            </div>
+          </div>
+          <div class="fixed_width grow-1" id="emlak_city">
+            <div class="dropdown">
+              <button class="dropdown__button" data-value="emlak_desc_city">
+                Şəhər
+              </button>
+              <i class="fa-solid fa-angle-down drop_arrow"></i>
+              <div class="dropdown__list_hero"></div>
+              <input
+                type="text"
+                name="select-category"
+                value=""
+                class="dropdown__input-hidden"
+              />
+            </div>
+          </div>
+          <div class="fixed_width" id="emlak_metro">
             <div class="dropdown">
               <button
-                class="dropdown__button"
-                data-value="color"
-                id="color_dekstop_btn"
+                class="dropdown__button empty"
+                data-value="emlak_desc_metro"
+                id="metro-btn"
               >
-                Rəng
+                Metro
               </button>
               <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <div class="dropdown__list_hero"></div>
+              <div class="dropdown__list_hero metro_dropdown" id="metros"></div>
               <input
                 type="text"
                 name="select-category"
                 value=""
-                id="color_input"
-                class="dropdown__input-hidden"
+                class="dropdown__input-hidden dropdown__input-hidden-metro"
               />
             </div>
           </div>
-          <div class="form-group for_width20 grow-1 order-5">
+          <div class="fixed_width" id="emlak_nisangah">
             <div class="dropdown">
-              <button class="dropdown__button" data-value="oil">
-                Yanacaq növü
+              <button
+                class="dropdown__button empty"
+                data-value="emlak_desc_nisangah"
+                id="nisangah-btn"
+              >
+                Nişangah
               </button>
               <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <ul class="dropdown__list"></ul>
+              <div class="dropdown__list_hero" id="nisangahs"></div>
               <input
                 type="text"
                 name="select-category"
@@ -165,13 +250,17 @@
               />
             </div>
           </div>
-          <div class="form-group for_width20 grow-1 order-6" id="ban_group">
+          <div class="fixed_width" id="emlak_rayon">
             <div class="dropdown">
-              <button class="dropdown__button" data-value="ban">
-                Ban Növü
+              <button
+                class="dropdown__button empty"
+                data-value="emlak_desc_rayon"
+                id="rayon-btn"
+              >
+                Rayon və Qəsəbələr
               </button>
               <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <div class="dropdown__list_hero"></div>
+              <div class="dropdown__list_hero" id="rayons"></div>
               <input
                 type="text"
                 name="select-category"
@@ -180,77 +269,17 @@
               />
             </div>
           </div>
-          <div class="litr_group for_width_big grow-1 order-7">
-            <div class="form-group">
-              <div class="dropdown">
-                <button class="dropdown__button" data-value="minLitr">
-                  Həcm (sm<sup>3</sup>), min
-                </button>
-                <i class="fa-solid fa-angle-down drop_arrow"></i>
-                <ul class="dropdown__list" id="minLitr"></ul>
-                <input
-                  type="text"
-                  name="select-category"
-                  value=""
-                  class="dropdown__input-hidden"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="dropdown">
-                <button class="dropdown__button" data-value="maxLitr">
-                  maks
-                </button>
-                <i class="fa-solid fa-angle-down drop_arrow"></i>
-                <ul class="dropdown__list"></ul>
-                <input
-                  type="text"
-                  name="select-category"
-                  value=""
-                  class="dropdown__input-hidden"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="year_group for_width_small grow-1 order-8">
-            <div class="form-group">
-              <div class="dropdown">
-                <button class="dropdown__button" data-value="minYear">
-                  İl, min
-                </button>
-                <i class="fa-solid fa-angle-down drop_arrow"></i>
-                <ul class="dropdown__list"></ul>
-                <input
-                  type="text"
-                  name="select-category"
-                  value=""
-                  class="dropdown__input-hidden"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="dropdown">
-                <button class="dropdown__button" data-value="maxYear">
-                  maks
-                </button>
-                <i class="fa-solid fa-angle-down drop_arrow"></i>
-                <ul class="dropdown__list"></ul>
-                <input
-                  type="text"
-                  name="select-category"
-                  value=""
-                  class="dropdown__input-hidden"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="form-group for_width20 grow-1 order-9">
+          <!-- <div class="fixed_width grow-1" id="elmak_qesebe">
             <div class="dropdown">
-              <button class="dropdown__button" data-value="speed">
-                Sürətlər qutusu
+              <button
+                class="dropdown__button empty"
+                data-value="emlak_desc_qesebe"
+                id="qesebe-btn"
+              >
+                Qəsəbə
               </button>
               <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <ul class="dropdown__list"></ul>
+              <div class="dropdown__list_hero" id="qesebeler"></div>
               <input
                 type="text"
                 name="select-category"
@@ -258,420 +287,450 @@
                 class="dropdown__input-hidden"
               />
             </div>
-          </div>
-          <div class="form-group for_width20 grow-1 order-10">
-            <div class="dropdown">
-              <button class="dropdown__button" data-value="city">Şəhər</button>
-              <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <div class="dropdown__list_hero"></div>
-              <input
-                type="text"
-                name="select-category"
-                value=""
-                class="dropdown__input-hidden"
-              />
-            </div>
-          </div>
-          <div class="form-group for_width_big grow-1 order-11">
-            <div class="for_car">
-              <div class="all_car">
-                <input type="radio" id="all_car" name="ggg" checked />
-                <label>Hamısı</label>
-              </div>
-              <div class="new_car">
-                <input type="radio" id="new_car" name="ggg" />
-                <label>Yeni</label>
-              </div>
-              <div class="old_car">
-                <input type="radio" id="old_car" name="ggg" />
-                <label>Sürülmüş</label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="form-group for_width_small grow-1 order-12"
-            id="speed_form"
-          >
-            <div class="unersal_inputs">
-              <label for="price_input_min">
-                <input type="text" id="mileage_input_min" />
-                <p>Yürüş, min</p>
-              </label>
-              <label for="price_input_max">
-                <input type="text" id="mileage_input_max" />
-                <p>maks</p>
-              </label>
-            </div>
-          </div>
-          <div
-            class="form-group for_width20 grow-1 dnone order-13"
-            id="box_group"
-          >
-            <div class="dropdown">
-              <button class="dropdown__button" data-value="box">Ötürücü</button>
-              <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <ul class="dropdown__list"></ul>
-              <input
-                type="text"
-                name="select-category"
-                value=""
-                class="dropdown__input-hidden"
-              />
-            </div>
-          </div>
-          <div
-            class="form-group for_width20 grow-1 dnone order-14"
-            id="place_group"
-          >
-            <div class="dropdown">
-              <button class="dropdown__button" data-value="place">
-                Yerlərin sayı
-              </button>
-              <i class="fa-solid fa-angle-down drop_arrow"></i>
-              <ul class="dropdown__list"></ul>
-              <input
-                type="text"
-                name="select-category"
-                value=""
-                class="dropdown__input-hidden"
-              />
-            </div>
-          </div>
-          <div
-            class="form-group for_width_big grow-1 dnone order-15"
-            id="power_group"
-          >
-            <div class="unersal_inputs">
-              <label for="price_input_min">
-                <input type="text" id="hp_input_min" />
-                <p>Güc, min</p>
-              </label>
-              <label for="price_input_max">
-                <input type="text" id="hp_input_max" />
-                <p>maks</p>
-              </label>
-            </div>
-          </div>
-          <div
-            class="form-group for_width_small grow-1 d-flex dnone kred order-16"
-            id="kredit"
-          >
-            <div class="for_credit">
-              <div class="barter">
-                <input type="checkbox" value="Kredit" name="kred" id="kredit_checkbox" />
-                <label>Kredit</label>
-              </div>
-              <div class="credit">
-                <input type="checkbox" value="Barter" name="kred" id="barter_checkbox" />
-                <label>Barter</label>
-              </div>
-            </div>
-          </div>
-          <div class="additional_chekings_hero order-17">
-            <p class="additional_chekings_title">Avtomobilin təchizatı</p>
-            <div class="additional_chekings"></div>
-          </div>
-        </div>
-        <div class="desc_filters_btns">
-          <div class="desc_filters_btns--left">
-            <div class="links_767">
-              <a href="#ehtiyyat">Ehtiyyat Hissələri</a>
-              <a href="#aksesuar">Aksesuarlar</a>
-            </div>
-          </div>
-          <div class="desc_filters_btns--right">
-            <button class="filter_reset_btn">Sıfırla</button>
-            <button class="filter_else_btn">
-              <p>Daha çox filtr</p>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="filter_show_btn">Elanları göstər</div>
+          </div> -->
+          <div class="additional_chekings_emlak"></div>
+          <div class="emlak_view_btns">
+            <button id="emlak_all_reset_btn">Sıfırla</button>
+            <button id="emlak_submit_desktop">Elanları göstər</button>
           </div>
         </div>
       </div>
       <div class="main_container">
-        <div class="after_767">
-          <div id="mark767_show_btn">
-            <div class="mark767_show_btn_title">
-              <i class="fa-solid fa-car"></i>
-              <p>Bütün markalar</p>
-            </div>
-            <i class="fa-solid fa-chevron-down"></i>
+        <div class="emlak_mobi">
+          <div class="emlak_mobi_buy n2">
+            <label for="emlak_mobi_alqi_input">
+              <input
+                type="radio"
+                id="emlak_mobi_alqi_input"
+                name="pppp"
+                checked
+              />
+              <p id="emlak_mobi_alqi_p">Alqı-satqı</p>
+            </label>
+            <label for="emlak_mobi_kiraye_input">
+              <input type="radio" id="emlak_mobi_kiraye_input" name="pppp" />
+              <p id="emlak_mobi_kiraye_p">Kirayə</p>
+            </label>
           </div>
-          <!-- <div class="filters_new">
-                    <a href="/filters.html" class="filter_show">
-                        <i class="fa-solid fa-arrow-down-short-wide"></i>
-                        <p>Filtrlər</p>
-                    </a>
-                    <btn class="filter_show" id="sortTarix">
-                        <i class="fa-solid fa-arrow-down-z-a"></i>
-                        <p>Tarixə Görə</p>
-                    </btn>
-                </div> -->
-        </div>
-        <div class="neqliyyat_767">
-          <div id="afterMark767">
-            <label id="markLabel767">Marka</label>
-            <p id="checkedMark767"></p>
-            <i class="fa-solid fa-chevron-down" id="mark_arrow_down"></i>
-            <i class="fa-solid fa-circle-xmark" id="mark_reset_xmark"></i>
-          </div>
-          <div id="afterModel767">
-            <label id="modelLabel767">Model</label>
-            <p id="checkedModel767"></p>
-            <i class="fa-solid fa-chevron-down" id="model_arrow_down"></i>
-            <i class="fa-solid fa-circle-xmark" id="model_reset_xmark"></i>
-          </div>
-        </div>
-        <div class="filters_767">
-          <div class="filters_767_inner">
-            <a href="/filters.html">
-              <i class="fa-solid fa-arrow-down-short-wide"></i>
-              <p>Filtrlər</p>
-            </a>
-          </div>
-          <div class="filters_767_inner" id="filter_date">
-            <a href="#">
-              <i class="fa-solid fa-arrow-down-z-a"></i>
-              <p>Tarixə görə</p>
-            </a>
-          </div>
-        </div>
-        <div class="links_767">
-          <a href="#ehtiyyat">Ehtiyyat Hissələri</a>
-          <a href="#aksesuar">Aksesuarlar</a>
-        </div>
-      </div>
-      <div class="mark767_btn_wrapper" id="mark767_ready_btn">
-        <button class="mark_767_ready">Axtar</button>
-      </div>
-      <div id="mark767_dropdown">
-        <div class="mark767_header">
-          <i class="fa-solid fa-arrow-left" id="markCloseBtn767"></i>
-          <h3>Marka</h3>
-        </div>
-        <div class="search search--live">
-          <div class="input-group search__group">
-            <input
-              type="text"
-              class="form-control search__input"
-              id="markInput767"
-            />
-            <div class="input-group-append search__append">
-              <button class="search__btn" type="button"></button>
-            </div>
-          </div>
-        </div>
-        <div class="selectBox_title_popular" id="popularMarksTitle">
-          Populyar
-        </div>
-        <ul
-          class="selectBox__list selectBox__list_popular"
-          id="carMarksPopular767"
-        ></ul>
-        <div class="selectBox_title_popular selectBox__title_popular-all">
-          Bütün Markalar
-        </div>
-        <ul class="selectBox__list" id="carMarks767"></ul>
-      </div>
-      <div id="model767_dropdown">
-        <div class="model767_header">
-          <i class="fa-solid fa-arrow-left" id="modelCloseBtn767"></i>
-          <h3>Model</h3>
-        </div>
-        <div class="search search--live">
-          <div class="input-group search__group">
-            <input
-              type="text"
-              class="form-control search__input"
-              id="modelInput767"
-            />
-            <div class="input-group-append search__append">
-              <button class="search__btn" type="button"></button>
-            </div>
-          </div>
-        </div>
-        <ul class="selectBox__list" id="carModel767"></ul>
-      </div>
-      <section class="mark_section">
-        <div class="main_container">
-          <div class="container-fluid">
-            <div class="brands">
-              <div class="brands__heading">
-                <h2 class="mb-0">Markalar</h2>
-                <a href="">Bütün markalar</a>
-              </div>
-              <div class="brands__grid">
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>5555</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>11</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>2255</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>5555</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>5555</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>11</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>2255</span>
-                </a>
-                <a href="" class="brands__item">
-                  Mercedes
-                  <span>5555</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- <div class="mobile_marks_section_bg">
-        <div class="main_container">
-          <section class="mobile_marks_section">
-            <div class="mobile_marks_section_title">
-              <h4>Populyar markalar</h4>
-              <button class="mobile_all_marks_btn">Bütün markalar</button>
-            </div>
-            <div class="mobile_marks_section_hero">
-              <ul class="mobile_marks_section_hero_left">
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Mercedes</h6>
-                  <p>6936</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>LADA (VAZ)</h6>
-                  <p>5471</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Hyundai</h6>
-                  <p>4091</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Toyota</h6>
-                  <p>3219</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Kia</h6>
-                  <p>3181</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>BMW</h6>
-                  <p>2541</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Opel</h6>
-                  <p>1977</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Chevrolet</h6>
-                  <p>1586</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Ford</h6>
-                  <p>1554</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Nissan</h6>
-                  <p>1137</p>
-                </a>
+          <div class="form-group emlak_mobi_house">
+            <div class="dropdown">
+              <button class="dropdown__button" data-value="emkak-mobi-house">
+                Yeni tikililər
+              </button>
+              <i class="fa-solid fa-angle-down drop_arrow"></i>
+              <ul class="dropdown__list">
+                <p class="items_reset_btn">
+                  Sıfırla<i class="fa-sharp fa-solid fa-xmark"></i>
+                </p>
+                <li class="dropdown__list-item">Yeni tikililər</li>
+                <li class="dropdown__list-item">Köhnə tikililər</li>
+                <li class="dropdown__list-item">Daşınmaz əmlak</li>
               </ul>
-              <ul class="mobile_marks_section_hero_right">
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Land Rover</h6>
-                  <p>1030</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Volkswagen</h6>
-                  <p>852</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>GAZ</h6>
-                  <p>750</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Lexus</h6>
-                  <p>649</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Mitsubishi</h6>
-                  <p>584</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Honda</h6>
-                  <p>438</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Renault</h6>
-                  <p>407</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Daewoo</h6>
-                  <p>349</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Audi</h6>
-                  <p>340</p>
-                </a>
-                <a href="#" class="mobile_marks_section_item">
-                  <h6>Jeep</h6>
-                  <p>216</p>
-                </a>
-              </ul>
+              <input
+                type="text"
+                name="select-category"
+                value=""
+                class="dropdown__input-hidden"
+              />
             </div>
-          </section>
+          </div>
+          <div
+            id="emlakRoom"
+            class="mobile_emlak_room"
+            data-value="emlak_mobi_room"
+          >
+            <p id="checkedEmlakRoom2" style="pointer-events: none !important">
+              Otaq sayı
+            </p>
+            <i
+              class="fa-solid fa-angle-down"
+              style="pointer-events: none !important"
+              id="emlakRoomArrow"
+            ></i>
+            <ul class="emlak_room_dropdown">
+              <label for="otherRoom">
+                <input type="radio" id="otherRoom" checked="false" />
+                İstənilən otaq sayı
+              </label>
+              <label for="room1">
+                <input type="checkbox" id="room1" />
+                1 otaqlı
+              </label>
+              <label for="room2">
+                <input type="checkbox" id="room2" />
+                2 otaqlı
+              </label>
+              <label for="room3">
+                <input type="checkbox" id="room3" />
+                3 otaqlı
+              </label>
+              <label for="room4">
+                <input type="checkbox" id="room4" />
+                4 otaqlı
+              </label>
+              <label for="room5">
+                <input type="checkbox" id="room5" />
+                5 otaq və daha çox
+              </label>
+            </ul>
+          </div>
+          <button class="emlakMobiSearchBtn" style="text-align: left; padding: 10px;">
+            <i class="fa-solid fa-arrow-up-short-wide"></i>Ətraflı axtarış
+          </button>
         </div>
-      </div> -->
-      <!-- <div class="main_container">
-        <div class="products-search-title">
-          <h1>Avtomobil almaq<span> 10000 elan</span></h1>
-        </div>
-      </div> -->
-      <section>
-        <div class="title_bg">
+      </div>
+      <div class="emlakMobiSearchDropdown ">
+        <div class="emlakMobiSearchDropdown_header_bg">
           <div class="main_container">
-            <div class="title title--left" style="padding: 0 !important">
-              <span class="center-vertical">
-                <img src="{% static 'web/img/vip-large.svg' %}" alt="" class="mr-10" />
-                VIP Elanlar
-              </span>
-              <a
-                class="btn btn--icon btn--transparent"
-                href="#"
-                >
-                {% comment %}
-                <!-- href="{% url static 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}" -->
-                {% endcomment %}
-
-                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="" /> Bütün VIP
-                elanlar
-              </a>
+            <div class="emlakMobiSearchDropdown_header">
+              <i class="fa-solid fa-arrow-left"></i>
+              <p>Ətraflı axtarış</p>
+              <button class="emlakMobiSearchDropdown_reset">Sıfırla</button>
             </div>
           </div>
         </div>
+        <div class="emlakMobiSearchDropdown_hero">
+          <div class="main_container">
+            <div class="emlak_mobi_buy" id="mean_buy">
+              <label for="emlak_mobi_alqi_input_mean">
+                <input
+                  type="radio"
+                  id="emlak_mobi_alqi_input_mean"
+                  name="pppp"
+                />
+                <p id="emlak_mobi_alqi_p">Alqı-satqı</p>
+              </label>
+              <label for="emlak_mobi_kiraye_input_mean">
+                <input
+                  type="radio"
+                  id="emlak_mobi_kiraye_input_mean"
+                  name="pppp"
+                  checked="false"
+                />
+                <p id="emlak_mobi_kiraye_p">Kirayə</p>
+              </label>
+            </div>
+            <div class="carousel-container">
+              <div class="emlak_checks emlak_checks_carusel">
+                <div class="carousel">
+                  <label for="checks_home">
+                    <input type="radio" id="checks_home" name="mmmmm" checked />
+                    <p>Mənzil</p>
+                    <p>Mənzil</p>
+                  </label>
+                  <label for="checks_Newhome">
+                    <input type="radio" id="checks_Newhome" name="mmmmm" />
+                    <p>Yeni tikili</p>
+                    <p>Yeni tikili</p>
+                  </label>
+                  <label for="checks_Oldhome">
+                    <input type="radio" id="checks_Oldhome" name="mmmmm" />
+                    <p>Köhnə tikili</p>
+                    <p>Köhnə tikili</p>
+                  </label>
+                  <label for="checks_ofise">
+                    <input type="radio" id="checks_ofise" name="mmmmm" />
+                    <p>Ofis</p>
+                    <p>Ofis</p>
+                  </label>
+                  <label for="checks_qaraje">
+                    <input type="radio" id="checks_qaraje" name="mmmmm" />
+                    <p>Qaraj</p>
+                    <p>Qaraj</p>
+                  </label>
+                  <label for="checks_garden">
+                    <input type="radio" id="checks_garden" name="mmmmm" />
+                    <p>Həyət evi/Bağ evi</p>
+                    <p>Həyət evi/Bağ evi</p>
+                  </label>
+                  <label for="checks_land">
+                    <input type="radio" id="checks_land" name="mmmmm" />
+                    <p>Torpaq</p>
+                    <p>Torpaq</p>
+                  </label>
+                  <label for="checks_object">
+                    <input type="radio" id="checks_object" name="mmmmm" />
+                    <p>Obyekt</p>
+                    <p>Obyekt</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2 filters filters_emlak">
+              <div class="form-group">
+                <div class="dropdown">
+                  <button class="dropdown__button" data-value="city-mob">
+                    Şəhər
+                  </button>
+                  <i class="fa-solid fa-angle-down drop_arrow"></i>
+                  <div class="dropdown__list_hero"></div>
+                  <input
+                    type="text"
+                    name="select-category"
+                    value=""
+                    class="dropdown__input-hidden"
+                  />
+                </div>
+              </div>
+              <div class="form-group" id="emlak_metro-mob">
+                <div class="dropdown">
+                  <button class="dropdown__button empty" data-value="metro-mob" id="metro-btn-mob">
+                    Metro
+                  </button>
+                  <i class="fa-solid fa-angle-down drop_arrow"></i>
+                  <div class="dropdown__list_hero" id="metros-mob"></div>
+                  <input
+                    type="text"
+                    name="select-category"
+                    value=""
+                    class="dropdown__input-hidden"
+                  />
+                </div>
+              </div>
+              <div class="form-group" id="emlak_nisangah-mob">
+                <div class="dropdown">
+                  <button class="dropdown__button empty" data-value="nisangah-mob" id="nisangah-btn-mob">
+                    Nişangah
+                  </button>
+                  <i class="fa-solid fa-angle-down drop_arrow"></i>
+                  <div class="dropdown__list_hero" id="nisangahs-mob"></div>
+                  <input
+                    type="text"
+                    name="select-category"
+                    value=""
+                    class="dropdown__input-hidden"
+                  />
+                </div>
+              </div>
+              <div class="form-group" id="emlak_rayon-mob">
+                <div class="dropdown">
+                  <button class="dropdown__button empty" data-value="rayons-btn-mob" id="rayons-btn-mob">
+                    Rayon və qəsəbələr
+                  </button>
+                  <i class="fa-solid fa-angle-down drop_arrow"></i>
+                  <div class="dropdown__list_hero" id="rayons-mob"></div>
+                  <input
+                    type="text"
+                    name="select-category"
+                    value=""
+                    class="dropdown__input-hidden"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="emlak_checks2_hero">
+              <h5>Otaq sayı</h5>
+              <div class="emlak_checks emlak_checks2">
+                <label for="checks_1">
+                  <input type="checkbox" id="checks_1" />
+                  <p>1</p>
+                </label>
+                <label for="checks_2">
+                  <input type="checkbox" id="checks_2" />
+                  <p>2</p>
+                </label>
+                <label for="checks_3">
+                  <input type="checkbox" id="checks_3" />
+                  <p>3</p>
+                </label>
+                <label for="checks_4">
+                  <input type="checkbox" id="checks_4" />
+                  <p>4</p>
+                </label>
+                <label for="checks_5">
+                  <input type="checkbox" id="checks_5" />
+                  <p>5+ otaqlı</p>
+                </label>
+              </div>
+            </div>
+            <div class="emlak_place sand_metr">
+              <div class="emlak_place_title">Sahə, m<sup>2</sup></div>
+              <div class="form-group emlak_place_inputs">
+                <div class="unersal_inputs">
+                  <label for="area_input_min">
+                    <input type="text" id="area_input_min" />
+                    <p>min</p>
+                  </label>
+                  <label for="area_input_max">
+                    <input type="text" id="area_input_max" />
+                    <p>maks</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="emlak_place sand_place">
+              <div class="emlak_place_title">Torpağın sahəsi, sot</div>
+              <div class="form-group emlak_place_inputs">
+                <div class="unersal_inputs">
+                  <label for="price_input_min">
+                    <input type="text" id="price_input_min" />
+                    <p>min</p>
+                  </label>
+                  <label for="price_input_max">
+                    <input type="text" id="price_input_max" />
+                    <p>maks</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="emlak_place">
+              <div class="emlak_place_title">Qiymət, azn</div>
+              <div class="form-group emlak_place_inputs">
+                <div class="unersal_inputs">
+                  <label for="price_input_min">
+                    <input type="text" id="price_input_min" />
+                    <p>min</p>
+                  </label>
+                  <label for="price_input_max">
+                    <input type="text" id="price_input_max" />
+                    <p>maks</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="emlak_ipoteka_cixarish emlak_ipoteka_cixarish_mobi">
+              <label for="emlak_cixarish3" class="emlak_cixarish">
+                <p>Çıxarış var</p>
+                <input type="checkbox" id="emlak_cixarish3" />
+              </label>
+              <label for="emlak_ipoteka4" class="emlak_ipoteka">
+                <p>İpoteka var</p>
+                <input type="checkbox" id="emlak_ipoteka4" />
+              </label>
+            </div>
+            <div class="emlak_ipoteka_cixarish month">
+              <label for="emlak_cixarish5" class="emlak_cixarish">
+                <p>Aylıq</p>
+                <input type="checkbox" id="emlak_cixarish5" />
+              </label>
+              <label for="emlak_ipoteka5" class="emlak_ipoteka">
+                <p>Günlük</p>
+                <input type="checkbox" id="emlak_ipoteka5" />
+              </label>
+            </div>
+            <div class="emlak_biznes">
+              <div class="emlak_place_title">Biznes növü</div>
+              <div class="emlak_ipoteka_cixarish month">
+                <label for="emlak_cixarish6" class="emlak_cixarish">
+                  <p>Biznes mərkəzi</p>
+                  <input type="checkbox" id="emlak_cixarish6" />
+                </label>
+                <label for="emlak_ipoteka6" class="emlak_ipoteka">
+                  <p>Ev/Mənzil</p>
+                  <input type="checkbox" id="emlak_ipoteka6" />
+                </label>
+                <label for="emlak_ipoteka7" class="emlak_ipoteka">
+                  <p>Villa</p>
+                  <input type="checkbox" id="emlak_ipoteka7" />
+                </label>
+              </div>
+            </div>
+            <div class="emlak_mobi_buy floor_all">
+              <label for="emlak_mobi_hamisi_input">
+                <input
+                  type="radio"
+                  id="emlak_mobi_hamisi_input"
+                  name="pppp"
+                  checked
+                />
+                <p id="emlak_mobi_alqi_p">Hamısı</p>
+              </label>
+              <label for="emlak_mobi_temirli_input">
+                <input type="radio" id="emlak_mobi_temirli_input" name="pppp" />
+                <p id="emlak_mobi_kiraye_p">Təmirli</p>
+              </label>
+              <label for="emlak_mobi_temirsiz_input">
+                <input
+                  type="radio"
+                  id="emlak_mobi_temirsiz_input"
+                  name="pppp"
+                />
+                <p id="emlak_mobi_kiraye_p">Təmirsiz</p>
+              </label>
+            </div>
+            <div class="emlak_place floor_check">
+              <div class="emlak_place_title">Mərtəbə</div>
+              <div class="form-group emlak_place_inputs">
+                <div class="unersal_inputs">
+                  <label for="price_input_min">
+                    <input type="text" id="price_input_min" />
+                    <p>min</p>
+                  </label>
+                  <label for="price_input_max">
+                    <input type="text" id="price_input_max" />
+                    <p>maks</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="emlak_floor_hero floor_floor">
+              <label
+                for="emlak_floor_not_one_input1"
+                class="emlak_floor_not_one"
+              >
+                <input
+                  type="checkbox"
+                  id="emlak_floor_not_one_input1"
+                  checked="false"
+                />
+                <p>1-ci olmasın</p>
+              </label>
+              <label
+                for="emlak_floor_not_one_input2"
+                class="emlak_floor_not_top"
+              >
+                <input
+                  type="checkbox"
+                  id="emlak_floor_not_one_input2"
+                  checked="false"
+                />
+                <p>Ən üst olmasın</p>
+              </label>
+              <label
+                for="emlak_floor_not_one_input3"
+                class="emlak_floor_only_top"
+              >
+                <input
+                  type="checkbox"
+                  id="emlak_floor_not_one_input3"
+                  checked="false"
+                />
+                <p>Yalnız ən üst</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="emlakMobiSearchDropdown_show">
+          <div class="main_container">
+            <button id="emlak_submit_mob">Axtar</button>
+          </div>
+        </div>
+      </div>
+      <div class="title_bg">
+        <div class="main_container">
+          <div class="title title--left" style="padding: 0 !important">
+            <span class="center-vertical">
+              <img src="assets/img/vip-large.svg" alt="" class="mr-10" />
+              VIP Elanlar
+            </span>
+            <a
+              class="btn btn--icon btn--transparent"
+                href="#"
+            >
+              <img src="assets/img/chevron_lmain.svg" alt="" /> Bütün VIP
+              elanlar
+            </a>
+          </div>
+        </div>
+      </div>
+      <section>
         <div class="main_container">
           <div class="wrapper">
             <div class="post">
               <div class="post__list">
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -679,23 +738,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -703,6 +757,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -710,7 +765,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -718,10 +773,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -729,23 +781,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -753,6 +800,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -760,7 +808,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -768,10 +816,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -779,23 +824,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -803,6 +843,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -810,7 +851,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -818,10 +859,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -829,23 +867,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -853,6 +886,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -860,7 +894,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -868,10 +902,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -879,23 +910,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -903,6 +929,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -910,7 +937,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -918,10 +945,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -929,23 +953,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -953,6 +972,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -960,7 +980,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -968,10 +988,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -979,23 +996,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1003,6 +1015,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1010,7 +1023,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1018,10 +1031,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1029,23 +1039,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1053,6 +1058,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1060,7 +1066,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1068,10 +1074,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1079,23 +1082,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1103,6 +1101,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1110,7 +1109,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1118,10 +1117,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1129,23 +1125,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1153,6 +1144,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1160,7 +1152,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1168,10 +1160,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1179,23 +1168,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1203,6 +1187,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1210,7 +1195,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1218,10 +1203,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1229,23 +1211,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1253,6 +1230,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1260,7 +1238,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1268,10 +1246,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1279,23 +1254,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1303,6 +1273,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1310,7 +1281,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1318,10 +1289,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1329,23 +1297,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1353,6 +1316,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1360,7 +1324,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1368,10 +1332,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1379,23 +1340,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Mercedes G 63 AMG</a>
-                      <a href="" class="post__title2">2020, 4.0 L, 23 000 km</a>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
                       <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">418000 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1403,6 +1359,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1410,7 +1367,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1422,14 +1379,14 @@
               <div class="sticky-top reklam">
                 <a href="" class="d-md-block d-none">
                   <img
-                    src="{% static 'web/img/example/banner1.png"
+                    src="assets/img/example/banner1.png"
                     alt=""
                     class="w-100"
                   />
                 </a>
                 <a href="" class="d-md-none">
                   <img
-                    src="{% static 'web/img/example/banner-mob.png"
+                    src="assets/img/example/banner-mob.png"
                     alt=""
                     class="w-100"
                   />
@@ -1441,15 +1398,14 @@
         <!-- <div class="main_container">
           <div class="container-fluid">
             <button class="btn btn--icon mx-auto mt-10">
-              <img src="{% static 'web/img/chevron.svg' %}" alt="" />
-              Bütün VIP elanlar
+
             </button>
           </div>
         </div> -->
       </section>
-      <section class="for_banner_2">
+      <section>
         <a href="">
-          <img src="{% static 'web/img/example/banner2.png" alt="" class="w-100" />
+          <img src="assets/img/example/banner2.png" alt="" class="w-100" />
         </a>
       </section>
       <section>
@@ -1460,7 +1416,7 @@
               style="padding: 0 !important"
             >
               <span class="center-vertical"> Yeni elanlar </span>
-              <form class="sort-filters-desktop-form">
+              <form class="sort-filters-desktop">
                 <div class="form-group sort__select">
                   <select id="sort_input" class="selectpicker">
                     <option value="-created_at" selected>Əvvəlcə yeni</option>
@@ -1474,11 +1430,7 @@
                 class="btn btn--icon btn--transparent"
                 href="#"
                 >
-                {% comment %}
-                <!-- href="{% url static 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}" -->
-                {% endcomment %}
-
-                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="" /> Bütün yeni
+                <img src="assets/img/chevron_lmain.svg" alt="" /> Bütün yeni
                 elanlar
               </a>
             </div>
@@ -1486,24 +1438,11 @@
         </div>
         <div class="main_container">
           <div class="wrapper">
-            <!-- <form class="sort_mobile">
-                        <div class="form-group sort__select  mb-4">
-                            <select id="sort_input" class="selectpicker">
-                                <option value="-created_at" selected>Əvvəlcə yeni</option>
-                                <option value="created_at">Əvvəlcə köhnə</option>
-                                <option value="-price">Əvvəlcə baha</option>
-                                <option value="price">Əvvəlcə ucuz</option>
-                            </select>
-                        </div>
-                    </form> -->
             <div class="post">
               <div class="post__list">
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1511,23 +1450,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1535,6 +1469,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1542,7 +1477,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1550,10 +1485,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1561,23 +1493,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1585,6 +1512,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1592,7 +1520,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1600,10 +1528,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1611,23 +1536,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1635,6 +1555,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1642,7 +1563,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1650,10 +1571,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1661,23 +1579,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1685,6 +1598,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1692,7 +1606,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1700,10 +1614,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1711,23 +1622,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1735,6 +1641,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1742,7 +1649,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1750,10 +1657,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1761,23 +1665,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1785,6 +1684,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1792,7 +1692,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1800,10 +1700,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1811,23 +1708,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1835,6 +1727,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1842,7 +1735,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1850,10 +1743,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1861,23 +1751,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1885,6 +1770,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1892,7 +1778,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1900,10 +1786,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1911,23 +1794,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1935,6 +1813,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1942,7 +1821,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1950,10 +1829,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -1961,23 +1837,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -1985,6 +1856,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -1992,7 +1864,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2000,10 +1872,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -2011,23 +1880,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -2035,6 +1899,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -2042,7 +1907,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2050,10 +1915,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -2061,23 +1923,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -2085,6 +1942,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -2092,7 +1950,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2100,10 +1958,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -2111,23 +1966,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -2135,6 +1985,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -2142,7 +1993,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2150,10 +2001,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -2161,23 +2009,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -2185,6 +2028,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -2192,7 +2036,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2200,10 +2044,7 @@
                 </div>
                 <div class="post__item">
                   <div class="post__img">
-                    <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
-                      alt=""
-                    />
+                    <img src="assets/img/example/post2.png" alt="" />
                     <div class="post__attributes">
                       <span
                         class="post__vip"
@@ -2211,23 +2052,18 @@
                         data-placement="top"
                         title="VIP elan"
                       ></span>
-                      <span
-                        class="post__premium"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Premium elan"
-                      ></span>
                       <a href="" class="post__favorites"></a>
                     </div>
                   </div>
                   <div class="post__info">
                     <div class="px-5">
-                      <a href="" class="post__title">Toyota Land Cruiser</a>
-                      <a href="" class="post__title2">2022, 3.5 L, 14 000 km</a>
-                      <p>Bakı, 11.09.2023, 22:53:</p>
+                      <a href="" class="post__title other_post_title"
+                        >Samsung Galaxy S12 phone sell</a
+                      >
+                      <p>Bakı, 28.01.2021, 16:34</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="post__price">195500 ₼</div>
+                      <div class="post__price">2180 ₼</div>
                       <div class="d-flex align-items-center">
                         <span
                           class="post__feature"
@@ -2235,6 +2071,7 @@
                           data-placement="top"
                           title="Barter mümkündür"
                         >
+                          <img src="assets/img/barter.svg" alt="" />
                         </span>
                         <span
                           class="post__feature"
@@ -2242,7 +2079,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
+                          <img src="assets/img/percent.svg" alt="" />
                         </span>
                       </div>
                     </div>
@@ -2254,14 +2091,14 @@
               <div class="sticky-top reklam">
                 <a href="" class="d-md-block d-none">
                   <img
-                    src="{% static 'web/img/example/banner3.png"
+                    src="assets/img/example/banner3.png"
                     alt=""
                     class="w-100"
                   />
                 </a>
                 <a href="" class="d-md-none">
                   <img
-                    src="{% static 'web/img/example/banner-mob.png"
+                    src="assets/img/example/banner-mob.png"
                     alt=""
                     class="w-100"
                   />
@@ -2270,11 +2107,11 @@
             </div>
           </div>
         </div>
-        <div class="main_container">
+        <!-- <div class="main_container">
           <div class="more">
-            <!-- <button class="btn btn--more mx-auto mt-10">Daha çox göstər</button> -->
+            <button class="btn btn--more mx-auto mt-10">Daha çox göstər</button>
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
 
@@ -2286,7 +2123,7 @@
             <a href="" class="contact__network instagram"></a>
             <span class="contact__tel">
               Dəstək:
-              <a href="tel:">012 555 65 00 | 055 262 65 00 </a>
+              <a href="tel:">051 123 45 67</a>
             </span>
             <a href="" class="contact__network whatsapp"></a>
             <a href="" class="contact__network telegram"></a>
@@ -2476,125 +2313,35 @@
       </div>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var carousel = new Flickity(".carousel", {
+          prevNextButtons: false, // Отключаем кнопки навигации
+          pageDots: false, // Отключаем точки навигации
+          contain: true, // Принудительно ограничиваем ширину контейнера
+          draggable: true, // Запрещаем перетаскивание для скроллинга
+          cellAlign: "left", // Выравниваем элементы к левому краю
+        });
 
-    <script
-      src="{% static 'web/libs/popper.js' %}/popper.min.js' %}"
-      type="text/javascript"
-    ></script>
+        // Автоматический скролл к последнему элементу
+        carousel.select(0);
+      });
+    </script>
+    <script src="assets/js/all.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    <script src="{% static 'web/js/emlak.js' %}"></script>
+    <!-- <script src="assets/js/descFilters.js"></script> -->
 
-    <script
-      src="{% static 'web/libs/bootstrap/bootstrap.min.js' %}"
-      type="text/javascript"
-      charset="utf-8"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/sorttable/sorttable.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/lightslider/lightslider.js' %}"
-    ></script>
-
-    <script type="text/javascript" src="{% static 'web/libs/zoom/zoom.js' %}"></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/sumogallery/jquery.sumogallery.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/bootstrap-select/bootstrap-select.min.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/moment.js' %}/moment.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/jquery-ui/jquery-ui.min.js' %}"
-    ></script>
-
-    <script src="{% static 'web/js/all.js' %}" type="text/javascript"></script>
-
-    <script src="{% static 'web/js/newjs.js' %}"></script>
-    <script src="{% static 'web/js/descFilters.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'web/libs/typed.js' %}/typed.js' %}"></script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>-->
-    <!-- <script
-      src="https://www.google-analytics.com/analytics.js' %}"
+       <script>
+           window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+           ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+       </script>-->
+    <script
+      src="https://www.google-analytics.com/analytics.js"
       async
       defer
-    ></script> -->
-
-    
-    <script src="{% static 'web/js/filterTarix.js' %}"></script>
-    <script
-      src="{% static 'web/libs/popper.js' %}/popper.min.js' %}"
-      type="text/javascript"
     ></script>
-
-    <script
-      src="{% static 'web/libs/bootstrap/bootstrap.min.js' %}"
-      type="text/javascript"
-      charset="utf-8"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/sorttable/sorttable.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/lightslider/lightslider.js' %}"
-    ></script>
-
-    <script type="text/javascript" src="{% static 'web/libs/zoom/zoom.js' %}"></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/sumogallery/jquery.sumogallery.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/bootstrap-select/bootstrap-select.min.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/moment.js' %}/moment.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.js' %}"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="{% static 'web/libs/jquery-ui/jquery-ui.min.js' %}"
-    ></script>
-    <script src="{% static 'web/js/all.js' %}" type="text/javascript"></script>
-    <script src="{% static 'web/js/descFilters.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'web/libs/typed.js' %}/typed.js' %}"></script>
     {% include 'partials/scripts.html' %}
   </body>
 </html>

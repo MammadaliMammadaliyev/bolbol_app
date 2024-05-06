@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (
     HomeView,
-    CategoryTransportView
+    CategoryTransportView,
+    CategoryEstateView
 )
 
 
@@ -17,5 +18,10 @@ urlpatterns = [
         "neqliyyat/",
         CategoryTransportView.as_view(),
         name="category-transport"
-    )
+    ),
+    path(
+        "dashinmaz-emlak/",
+        CategoryEstateView.as_view(),
+        name="category-estate"
+    ),
 ]
