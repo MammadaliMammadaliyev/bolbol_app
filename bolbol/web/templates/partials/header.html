@@ -1,0 +1,56 @@
+{% load static %}
+<header class="header">
+    <div class="main_container">
+      <div class="header__topbar" id="standardTopBar">
+        <div class="contact">
+          <a href="" class="contact__network facebook"></a>
+          <a href="" class="contact__network instagram"></a>
+          <span class="contact__tel">
+              Dəstək:
+              <a href="tel:">012 555 65 00 | 055 262 65 00 </a>
+          </span>
+          <a href="" class="contact__network whatsapp"></a>
+          <a href="" class="contact__network telegram"></a>
+        </div>
+        <div class="d-md-flex align-items-center">
+          <img src="{% static 'web/img/logout-icon.svg' %}" />
+          <a href="/auth/logout/">Çıxış</a>
+        </div>
+      </div>
+    </div>
+    <div class="navbar_bg">
+      <div class="main_container">
+        <nav class="navbar navbar-expand-md" id="standardNavbar">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          ></button>
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'web/img/logo.svg' %}" alt="logo" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <div class="header__links">
+              <a href="" class="header__link header__link--favorites"
+                >Seçdiklərim</a
+              >
+              <a
+                href=""
+                class="header__link header__link--login"
+                data-toggle="modal"
+                data-target="#loginModal"
+                >Şəxsi kabinet</a
+              >
+              <!-- <a href="" class="header__link header__link--login">Şəxsi kabinet</a> -->
+              <!-- <a href="" class="header__link header__link--logout">Çıxış et</a> -->
+            </div>
+          </div>
+          <a href="" class="btn header__btn"><span>Yeni elan</span></a>
+        </nav>
+      </div>
+    </div>
+</header>
