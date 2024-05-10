@@ -11,3 +11,7 @@ class CategoryTransportView(generic.TemplateView):
 
 class CategoryEstateView(generic.TemplateView):
     template_name = "web/estate.html"
+
+
+class CategoryElectronicsView(generic.TemplateView):
+    template_name = "web/electronics.html"
