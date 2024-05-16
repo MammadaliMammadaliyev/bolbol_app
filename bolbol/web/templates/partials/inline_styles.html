@@ -1,0 +1,445 @@
+{% load static %}
+
+<style>
+.category__btn.btn:before {
+
+    background-image: url("{% static 'web/img/categories/categories-more.svg' %}");
+}
+	
+.post__vip {
+        background-image: url("{% static 'web/img/vip-icon.svg' %}");
+    }
+
+    .post__favorites:before {
+        background-image: url("{% static 'web/img/favorite-icon.svg' %}")  no-repeat center/cover;
+    }
+
+    .post__favorites:after {
+        background-image: url("{% static 'web/img/favorite_full-icon.svg' %}");
+    }
+
+    .search__btn {
+        background-image: url("{% static 'web/img/search.svg' %}");
+    }
+
+    .contact__network.facebook {
+        background-image: url("{% static 'web/img/facebook-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact__network.facebook {
+            background-image: url("{% static 'web/img/facebook4-icon.svg' %}");
+        }
+    }
+
+    .contact__network.instagram {
+        background-image: url("{% static 'web/img/instagram-icon.svg' %}") !important;
+    }
+
+    .contact__network.whatsapp {
+        background-image: url("{% static 'web/img/whatsapp-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact__network.whatsapp {
+            background-image: url("{% static 'web/img/whatsapp2-icon.svg' %}");
+        }
+    }
+
+    .contact__network.telegram {
+        background-image: url("{% static 'web/img/telegram-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact__network.telegram {
+            background-image: url("{% static 'web/img/telegram2-icon.svg' %}");
+        }
+    }
+
+    .contact--secondary .contact__network.facebook {
+        background-image: url("{% static 'web/img/facebook3-icon.svg' %}");
+    }
+
+    .contact--secondary .contact__network.instagram {
+        background-image: url("{% static 'web/img/instagram3-icon.svg' %}") !important;
+    }
+
+    .contact--secondary .contact__network.whatsapp {
+        background-image: url("{% static 'web/img/whatsapp3-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact--secondary .contact__network.whatsapp {
+            background-image: url("{% static 'web/img/whatsapp4-icon.svg' %}");
+        }
+    }
+
+    .contact--secondary .contact__network.telegram {
+        background-image: url("{% static 'web/img/telegram3-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact--secondary .contact__network.telegram {
+            background-image: url("{% static 'web/img/telegram4-icon.svg' %}");
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .contact--secondary {
+            margin-bottom: 40px;
+        }
+    }
+
+
+
+    .header__link--favorites:before {
+        background-image: url("{% static 'web/img/favorite_white-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .header__link--favorites:before {
+            background-image: url("{% static 'web/img/favorite_main-icon.svg' %}");
+        }
+    }
+
+    .header__link--login:before {
+        background-image: url("{% static 'web/img/person-icon.svg' %}");
+    }
+
+    @media screen and (max-width: 767px) {
+        .header__link--login:before {
+            background-image: url("{% static 'web/img/person_main-icon.svg' %}");
+        }
+    }
+
+    .header__link--logout:before {
+        background-image: url("{% static 'web/img/logout-icon.svg' %}");
+    }
+
+    .header__btn.btn {
+        background-image: url("{% static 'web/img/add-icon.svg' %}");
+    }
+
+    .btn--more:before {
+        content: url("{% static 'web/img/chevron_gray.svg' %}");
+    }
+
+    form .custom-checkbox .custom-control-label::before {
+        background-image: url("{% static 'web/img/checkbox_main-icon.svg' %}");
+    }
+
+    form .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+        background-image: url("{% static 'web/img/check-icon.svg' %}");
+    }
+
+    form .custom-checkbox--simple .custom-control-label::before {
+        background-image: url("{% static 'web/img/checkbox-icon.svg' %}");
+    }
+
+    .promotion__item--vip:before {
+        background-image: url("{% static 'web/img/vip_white-icon.svg' %}")
+    }
+
+    .promotion__item--premium:before {
+        background-image: url("{% static 'web/img/premium-icon.svg' %}")
+    }
+
+    .promotion__item--up:before {
+        background-image: url("{% static 'web/img/arrow_up-icon.svg' %}")
+    }
+
+    @font-face {
+        font-family: Arimo-Regular;
+        src: url("{% static 'web/fonts/Arimo-Regular.eot' %}");
+        src: url("{% static 'web/fonts/Arimo-Regular.eot?#iefix' %}") format("embedded-opentype"),
+        url("{% static 'web/fonts/Arimo-Regular.woff2' %}") format("woff2"),
+        url("{% static 'web/fonts/Arimo-Regular.woff' %}") format("woff"),
+        url("{% static 'web/fonts/Arimo-Regular.ttf' %}") format("truetype"),
+        url("{% static 'web/fonts/Arimo-Regular.svg#Arimo-Regular' %}") format("svg");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: Arimo-Bold;
+        src: url("{% static 'web/fonts/Arimo-Bold.eot' %}");
+        src: url("{% static 'web/fonts/Arimo-Bold.eot?#iefix' %}") format("embedded-opentype"),
+        url("{% static 'web/fonts/Arimo-Bold.woff2' %}") format("woff2"),
+        url("{% static 'web/fonts/Arimo-Bold.woff' %}") format("woff"),
+        url("{% static 'web/fonts/Arimo-Bold.ttf' %}") format("truetype"),
+        url("{% static 'fonts/Arimo-Bold.svg#Arimo-Bold' %}") format("svg");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    .btn--edit:before {
+        background-image: url("{% static 'web/img/edit-icon.svg' %}")
+    }
+
+    .btn--recover:before {
+        background-image: url("{% static 'web/img/restore-icon.svg' %}");
+    }
+
+    .btn--deactive:before {
+        background-image: url("{% static 'web/img/deactive-icon.svg' %}");
+    }
+
+    .btn--delete:before {
+        background-image: url("{% static 'web/img/delete-icon.svg' %}");
+    }
+
+    /* .product__complaint:before {
+        background: url("{% static 'web/img/complaint-icon.svg' %}") no-repeat center/cover;
+    } */
+
+    .product__view:before {
+        background: url("{% static 'web/img/eye-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .product__favorite:after {
+        background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .product__favorite:hover:after {
+        background-image: url("{% static 'web/img/favorite_hover-icon.svg' %}");
+    }
+
+    .post__favorites:hover:before {
+      background: url("{% static 'web/img/favorite_hover-icon.svg' %}") no-repeat center/cover; }
+
+    .product__favorite.active:after {
+        background-image: url("{% static 'web/img/favorite_full-icon.svg' %}");
+    }
+
+    .breadcrumb-item:not(:last-of-type)::after {
+        background: url("{% static 'web/img/breadcrumb.svg' %}") no-repeat center/cover;
+    }
+
+    .review__toggler span:before {
+        background: url("{% static 'web/img/review-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .review__toggler:after {
+        background: url("{% static 'web/img/chevron_main.svg' %}") no-repeat center/cover;
+    }
+
+    .file__delete:before {
+        background: url("{% static 'web/img/delete_main-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .file__delete2:before {
+        background: url("{% static 'web/img/delete_main-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .file__delete3:before {
+        background: url("{% static 'web/img/delete_main-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .file__add:before {
+        background: rgba(1, 63, 68, 0.1) url("{% static 'web/img/add-icon.svg' %}") no-repeat center/32px 32px;
+    }
+    .file__adda:before {
+        background: rgba(1, 63, 68, 0.1) url("{% static 'web/img/add-icon.svg' %}") no-repeat center/32px 32px;
+    }
+
+    .file__item--sortable:after {
+        background: url("{% static 'web/img/drag-icon.svg' %}") no-repeat center/cover;
+    }
+
+    .file__item2--sortable:after {
+        background: url("{% static 'web/img/drag-icon.svg' %}") no-repeat center/cover;
+    }
+    .file__item3--sortable:after {
+        background: url("{% static 'web/img/drag-icon.svg' %}") no-repeat center/cover;
+    }
+    .file__wrapper.is-invalid {
+        border: 1px solid red;
+    }
+
+    form .dropdown.bootstrap-select .btn.dropdown-toggle::after {
+      background: url("{% static 'web/img/chevron_gray.svg' %}") no-repeat center/cover;
+  }
+
+    .tooltip .arrow::before {
+      background: url("{% static 'web/img/tooltip-arrow.svg' %}") no-repeat center/cover; 
+    }
+
+    .popover.bs-popover-auto[x-placement^=top] > .arrow, .popover.bs-popover-top > .arrow {
+      background-image: url("{% static 'web/img/popover-icon.svg' %}");  }
+
+    .navbar-toggler{ 
+        background: url("{% static 'web/img/toggler.svg' %}")  no-repeat center/24px 24px;
+    }
+
+    .navbar-toggler.active {
+      background-image: url("{% static 'web/img/toggler_close.svg' %}"); 
+    }
+
+    .lSSlideOuter .lSAction > .lSPrev {
+     background-image: url("{% static 'web/img/gallery-left.svg' %}"); }
+
+    .lSSlideOuter .lSAction > .lSNext {
+    background-image: url("{% static 'web/img/gallery-right.svg' %}"); }
+
+    .profile__posts:after {
+    background: url("{% static 'web/img/chevron_main.svg' %}") no-repeat center/cover;}
+
+    .filter__title:after {
+      background: url("{% static 'web/img/chevron_main.svg' %}") no-repeat center/cover; }
+    
+    .post__premium {
+    background-image: url("{% static 'web/img/premium-icon.svg' %}"); }
+    
+    .product__favorite:after {
+      background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover; }
+    .product__favorite:hover:after {
+        background-image: url("{% static 'web/img/favorite_hover-icon.svg' %}"); }
+    .product__favorite.active:after {
+        background-image: url("{% static 'web/img/favorite_full-icon.svg' %}"); }
+
+    .search__btn--small {
+        background-image: url("{% static 'web/img/search2-icon.svg' %}"); }
+
+    form .bootstrap-datetimepicker-widget .btn {
+    background: #fff url("{% static 'web/img/chevron_gray.svg' %}") no-repeat center/20px 20px;}
+
+
+
+    .post__favorites:before {
+    background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover; }
+
+
+/* 
+    .post__favorites:before {
+    background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover; }
+    .post__favorites:after {
+    background: url("{% static 'web/favorite_full-icon.svg' %}") no-repeat center/cover;}
+
+    .post__favorites:hover:before {
+    background: url("{% static 'web/favorite_hover-icon.svg' %}") no-repeat center/cover; }
+    .product__favorite:after {
+    background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover; }
+
+    .product__favorite:hover:after {
+    background-image: url("{% static 'web/img/favorite_hover-icon.svg' %}"); }
+
+    .product__favorite.active:after {
+    background-image: url("{% static 'web/img/favorite_full-icon.svg' %}");
+      }
+    .product__favorite:after {
+    background: url("{% static 'web/img/favorite-icon.svg' %}") no-repeat center/cover; }
+    .product__favorite:hover:after {
+    background-image: url("{% static 'web/img/favorite_hover-icon.svg' %}"); }
+
+    .product__favorite.active:after {
+    background-image: url("{% static 'web/img/favorite_full-icon.svg' %}");} */
+
+    .lSSlideOuter .lSAction > .lSPrev {
+
+  background-image: url("{% static 'web/img/gallery-left.svg' %}"); }
+
+.lSSlideOuter .lSAction > .lSNext {
+
+  background-image: url("{% static 'web/img/gallery-right.svg' %}"); }
+
+  .SumoGallery .Sheader a {
+      background: url("{% static 'web/img/gallery-close.svg' %}") no-repeat center/cover;
+  }
+.SumoGallery .Sarrow.l {
+      background-image: url("{% static 'web/img/gallery-left2.svg' %}"); }
+.SumoGallery .Sarrow.r {
+      background-image: url("{% static 'web/img/gallery-right2.svg' %}"); }
+
+.promotion__item--super-furset:before {
+background-image: url("{% static 'web/img/categories/category16.svg' %}"); }
+
+
+
+
+
+form .custom-radio .custom-control-label:before {
+background-image:url("{% static 'web/img/radio-icon.svg' %}");
+}
+
+form .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+	background-image: url("{% static 'web/img/radio_checked-icon.svg' %}");
+}
+
+
+
+
+form .custom-checkbox .custom-control-input-premium:checked~.custom-control-label-premium::after {
+        background-image: url("{% static 'web/img/check-icon.svg' %}");
+    }
+
+form .custom-checkbox .custom-control-input-super_chance:checked~.custom-control-label-super_chance::after {
+        background-image: url("{% static 'web/img/check-icon.svg' %}");
+    }
+
+form .custom-checkbox .custom-control-input-promote:checked~.custom-control-label-promote::after {
+        background-image: url("{% static 'web/img/check-icon.svg' %}");
+    }
+
+
+
+
+form .custom-radio-premium .custom-control-label-premium::before {
+     background-image:url("{% static 'web/img/radio-icon.svg' %}"); 
+      }
+
+form .custom-control-input-premium::before {
+background-image:url("{% static 'web/img/radio-icon.svg' %}");
+}
+
+
+
+
+
+
+
+
+form .custom-radio-premium .custom-control-input-premium:checked ~ .custom-control-label-premium::after {
+                background-image: url("{% static 'web/img/radio_checked-icon.svg' %}");
+}
+
+
+form .custom-radio-promote .custom-control-label-promote:before {
+        background-image:url("{% static 'web/img/radio-icon.svg' %}");
+    }
+        
+form .custom-radio-promote .custom-control-input-promote:checked ~ .custom-control-label-promote::after { 
+		background-image: url("{% static 'web/img/radio_checked-icon.svg' %}");
+}
+
+form .custom-radio-super_chance .custom-control-label-super_chance:before {
+	background-image:url("{% static 'web/img/radio-icon.svg' %}");
+}
+
+form .custom-radio-super_chance .custom-control-input-super_chance:checked ~ .custom-control-label-super_chance::after {
+        background-image: url("{% static 'web/img/radio_checked-icon.svg' %}");
+}
+
+
+/* .custom-radio {
+background-image: url("{% static 'web/img/radio-icon.svg' %}");}
+
+
+form .custom-checkbox .custom-control-label::before {
+background-image: url("{% static 'web/img/checkbox_main-icon.svg' %}");
+}
+
+form .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+background-image:  url("{% static 'web/img/check-icon.svg' %}");
+}
+
+form .custom-checkbox--simple .custom-control-label::before {
+background-image:  url("{% static 'web/img/checkbox-icon.svg' %}");
+}
+
+form .custom-radio .custom-control-input .custom-control-label::before {
+background-image:url("{% static 'web/img/radio_checked-icon.svg' %}");
+} */
+
+</style>

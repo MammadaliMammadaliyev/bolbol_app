@@ -1,0 +1,29 @@
+{% load static %}
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-9 mx-auto">
+                {% include 'partials/search_input.html' %}
+            </div>
+        </div>
+        <div class="category">
+            <div class="category__list">
+                {% for category in top_categories %}
+                    {% if category.name == 'Mağaza və şirkətlər' or category.pk == 23 %}
+                    <a href="{% url 'web:shops-list' %}" class="category__item">
+                        <img src="{% if category.icon %}{{ category.icon.url }}{% endif %}" alt="category-icon">
+                        {{ category.name }}
+                    </a>
+                    {% else %}
+                    <a href="{% url 'web:catalog-2' category_pk=category.pk child_pk=0 %}?category_id={{ category.id }}" class="category__item">
+                        <img src="{% if category.icon %}{{ category.icon.url }}{% endif %}" alt="category-icon">
+                        {{ category.name }}
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <a class="btn category__btn">Bütün kateqoriyalar</a>
+        </div>
+    </div>
+</section>

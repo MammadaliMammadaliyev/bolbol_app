@@ -1,0 +1,48 @@
+{% extends 'web/base.html' %}
+{% load static i18n %}
+
+{% block content %}
+<main>
+    <div id="meta" reset-offset='1'></div>
+    {% include 'partials/categories.html' with hard_search=True %}
+	
+    <section class="vip-section">
+        <div class="title title--left">
+            <span class="center-vertical">
+                <img src="{% static 'web/img/vip-large.svg' %}" alt="" class="mr-10">
+                {% trans 'VIP ads' %}
+            </span>
+            <a class="btn btn--icon btn--transparent" href="{% url 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}">
+                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="">
+                {% trans 'All VIP advertisements' %}
+            </a>
+        </div>
+        {% include 'partials/products_section.html' with type='vip' div_id='section_1' shuffled=True %}
+    </section>
+    {% include 'partials/horizontal_banner.html' %}
+    <section class="fresh-section">
+        <div class="title title--left">
+            <span class="center-vertical">
+                {% trans 'Fresh ads' %}
+            </span>
+            <a class="btn btn--icon btn--transparent" href="{% url 'web:catalog-fresh' %}{% include 'partials/_request_GET.html' %}?fresh=True">
+
+                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="">
+                {% trans 'Bütün yeni elanlar' %}
+            </a>
+        </div>
+        {% include 'partials/products_section.html' with type='sim' div_id='section_2' shuffled=True latest=True %}
+    </section>
+    {% include 'partials/horizontal_banner2.html' %}
+    <section>
+        <div class="title">
+            <img src="{% static 'web/img/premium-icon.svg' %}" alt="" class="mr-10">
+            {% trans 'Premium ads' %}
+        </div>
+        {% include 'partials/products_section.html' with type='pre' div_id='section_3' shuffled=True %}
+        <div class="more">
+            <p class='scrolltothis'></p>
+        </div>    
+    </section>
+</main>
+{% endblock %}

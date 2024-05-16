@@ -1,5 +1,4 @@
 if ($('#home-typed').length > 0) {
-    console.log("home search")
     var typed = new Typed('#home-typed', {
         strings: ["bolbol axtar", 'iPhone 12', 'Pərdə', 'Maşın təkəri', 'Xiaomi Mi9T', 'Rəqs dərsləri', 'və sairə...'],
         typeSpeed: 40,
