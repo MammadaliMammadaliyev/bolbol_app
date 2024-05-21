@@ -1,5 +1,5 @@
 // hide categories (on mobile)
-
+console.log($(".category__item").length)
 var categoriesFunc;
 (categoriesFunc = function categoriesFunc() {
   if ($(".category").length > 0) {
