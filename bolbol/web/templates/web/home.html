@@ -12,7 +12,11 @@
     <![endif]-->
 
     {% include 'partials/header.html' %}
-
+      <style>
+        .category img {
+    width: 40px;
+    height: 40px;}
+      </style>
     <main>
       <div class="main_container">
         <section id="home_filters_sec">
@@ -44,123 +48,129 @@
                     </div>
                 </div>
             </section>
-                <div class="category">
-                  <div class="category__list">
-                    <a href="{% url 'web:category-transport' %}" class="category__item">
+            <div class="category">
+                <div class="category__list">
+                  <a
+                    href="{% url 'web:category-transport' %}"
+                    class="category__item"
+                  >
                     <img
-                      src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                        alt="category-icon"
-                    />
+                      src="{% static 'web/img/categories/bolbol_icons_neqliyyat.svg' %}"
+                      alt="category-icon"
+                      />
                     Nəqliyyat
-                    </a>
-                    <a href="{% url 'web:category-estate' %}" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                />
-                Daşınmaz Əmlak
-                </a>
-                <a href="" class="category__item">
-                <img
-                    src="	{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                />
-                Geyim
-                </a>
-                <a href="" class="category__item">
-                <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                />
-                Uşaq aləmi
-                </a>
-                <a href="" class="category__item">
-                <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                />
-                Kosmetika və sağlamlıq
-                </a>
-                <a href="ish_elanlari.html" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  İş Elanları
-                </a>
-                <a href="kategoriya.html" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_electronics.svg' %}"
-                    alt="category-icon"
-                  />
-                  Elektronika
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Ev və bağ üçün
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Ərzaq
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Heyvan, Bitki
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  İdman, musiqi, hobbi
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Digər
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Xidmətlər
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Pulsuz
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Super Fürsət
-                </a>
-                <a href="" class="category__item">
-                  <img
-                    src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
-                    alt="category-icon"
-                  />
-                  Mağaza və şirkətlər
-                </a>
+                  </a>
+                  <a
+                    href="{% url 'web:category-estate' %}"
+                    class="category__item"
+                  >
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_estate.svg' %}"
+                      alt="category-icon"
+                    />
+                    Daşınmaz Əmlak
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="	{% static 'web/img/categories/bolbol_icons_clothes.svg' %}"
+                      alt="category-icon"
+                    />
+                    Geyim
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_baby_world.svg' %}"
+                      alt="category-icon"
+                    />
+                    Uşaq aləmi
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_cosmetics.svg' %}"
+                      alt="category-icon"
+                    />
+                    Kosmetika və sağlamlıq
+                  </a>
+                  <a href="ish_elanlari.html" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_job_vacancies.svg' %}"
+                      alt="category-icon"
+                    />
+                    İş Elanları
+                  </a>
+                  <a href="kategoriya.html" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_electronics.svg' %}"
+                      alt="category-icon"
+                    />
+                    Elektronika
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_village.svg' %}"
+                      alt="category-icon"
+                    />
+                    Ev və bağ üçün
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_estate.svg' %}"
+                      alt="category-icon"
+                    />
+                    Ərzaq
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_animals_plants.svg' %}"
+                      alt="category-icon"
+                    />
+                    Heyvan, Bitki
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_sport_music_hobby.svg' %}"
+                      alt="category-icon"
+                    />
+                    İdman, musiqi, hobbi
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_other.svg' %}"
+                      alt="category-icon"
+                    />
+                    Digər
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_services.svg' %}"
+                      alt="category-icon"
+                    />
+                    Xidmətlər
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_free.svg' %}"
+                      alt="category-icon"
+                    />
+                    Pulsuz
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_super_chance.svg' %}"
+                      alt="category-icon"
+                    />
+                    Super Fürsət
+                  </a>
+                  <a href="" class="category__item">
+                    <img
+                      src="{% static 'web/img/categories/bolbol_icons_shops_companies.svg' %}"
+                      alt="category-icon"
+                    />
+                    Mağaza və şirkətlər
+                  </a>
+                </div>
+                <a class="btn category__btn">Bütün kateqoriyalar</a>
               </div>
-              <a class="btn category__btn">Bütün kateqoriyalar</a>
-            </div>
           </div>
         </section>
       </div>

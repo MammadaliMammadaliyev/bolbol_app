@@ -9,6 +9,10 @@ class CategoryTransportView(generic.TemplateView):
     template_name = "web/transport.html"
 
 
+class TransportFiltersView(generic.TemplateView):
+    template_name = "web/transport_filters.html"
+
+
 class CategoryEstateView(generic.TemplateView):
     template_name = "web/estate.html"
 

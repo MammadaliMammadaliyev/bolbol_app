@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
     HomeView,
     CategoryTransportView,
-    CategoryEstateView
+    TransportFiltersView,
+    CategoryEstateView,
 )
 
 
@@ -23,5 +24,10 @@ urlpatterns = [
         "dashinmaz-emlak/",
         CategoryEstateView.as_view(),
         name="category-estate"
+    ),
+    path(
+        "transport-filters/",
+        TransportFiltersView.as_view(),
+        name="transport-filters"
     ),
 ]
