@@ -11,7 +11,6 @@ if ($('#home-typed').length > 0) {
 
 
 if ($('#transport-typed').length > 0) {
-    console.log("transport search")
     var typed = new Typed('#transport-typed', {
         strings: [
             "Toyota Land Cruiser",

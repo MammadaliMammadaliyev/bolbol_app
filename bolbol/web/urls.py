@@ -4,6 +4,7 @@ from .views import (
     CategoryTransportView,
     TransportFiltersView,
     CategoryEstateView,
+    CategoryElectronicsView,
 )
 
 
@@ -29,5 +30,10 @@ urlpatterns = [
         "transport-filters/",
         TransportFiltersView.as_view(),
         name="transport-filters"
+    ),
+    path(
+        "elektronika/",
+        CategoryElectronicsView.as_view(),
+        name="category-electronics"
     ),
 ]

@@ -6,4 +6,16 @@
     .post__list {
         row-gap: 0px;
     }
+
+    .banner-mob-none {
+        display: none;
+    }
+}
+
+.s-bot {
+    padding-bottom: 24px;
+}
+
+.s-bot-none {
+    padding-bottom: 0px;
 }

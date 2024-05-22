@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="no-js" lang="az">
     {% include 'partials/head.html' %}
@@ -321,24 +322,29 @@
           </div>
         </div>
       </div>
-      <section>
+      <section class="s-bot-none">
         <div class="title_bg">
           <div class="main_container">
             <div class="title title--left" style="padding: 0 !important">
               <span class="center-vertical">
-                <img src="assets/img/vip-large.svg" alt="" class="mr-10" />
+                <img src="{% static 'web/img/vip-large.svg' %}" alt="" class="mr-10" />
                 VIP Elanlar
               </span>
               <a
                 class="btn btn--icon btn--transparent"
-                href="{% url 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}"
-              >
-                <img src="assets/img/chevron_lmain.svg" alt="" /> Bütün VIP
+                href="#"
+                >
+                {% comment %}
+                <!-- href="{% url static 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}" -->
+                {% endcomment %}
+
+                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="" /> Bütün VIP
                 elanlar
               </a>
             </div>
           </div>
         </div>
+        
         <div class="main_container">
           <div class="wrapper">
             <div class="post">
@@ -346,7 +352,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -387,7 +393,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -396,7 +402,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -437,7 +443,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -446,7 +452,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -487,7 +493,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -496,7 +502,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -537,7 +543,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -546,7 +552,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -587,7 +593,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -596,7 +602,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -637,7 +643,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -646,7 +652,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -687,7 +693,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -696,7 +702,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -737,7 +743,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -746,7 +752,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -787,7 +793,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -796,7 +802,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -837,7 +843,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -846,7 +852,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -887,7 +893,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -896,7 +902,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -937,7 +943,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -946,7 +952,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -987,7 +993,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -996,7 +1002,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1037,7 +1043,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1046,7 +1052,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F11%2F38%2F54%2F527ee0e6-96aa-4be5-986e-434c24f35ac5%2F82120_b15XIlKznx-h_Kf8NdUNCQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1087,7 +1093,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/percent.svg" alt="" />
+                          <img src="{% static 'web/img/percent.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1099,34 +1105,52 @@
               <div class="sticky-top reklam">
                 <a href="" class="d-md-block d-none">
                   <img
-                    src="assets/img/example/banner1.png"
+                    src="{% static 'web/img/example/banner3.png' %}"
                     alt=""
                     class="w-100"
                   />
                 </a>
                 <a href="" class="d-md-none">
                   <img
-                    src="assets/img/example/banner-mob.png"
+                    src="{% static 'web/img/example/banner-mob.png' %}"
                     alt=""
                     class="w-100"
                   />
                 </a>
               </div>
             </div>
+            <!-- <div>
+              <div class="sticky-top reklam">
+                <a href="" class="d-md-block d-none">
+                  <img
+                    src="{% static 'web/img/example/banner2.png"
+                    alt=""
+                    class="w-100"
+                  />
+                </a>
+                <a href="" class="d-md-none">
+                  <img
+                    src="{% static 'web/img/example/banner-mob.png"
+                    alt=""
+                    class="w-100"
+                  />
+                </a>
+              </div>
+            </div> -->
           </div>
         </div>
         <!-- <div class="main_container">
           <div class="container-fluid">
             <button class="btn btn--icon mx-auto mt-10">
-              <img src="assets/img/chevron.svg" alt="" />
+              <img src="{% static 'web/img/chevron.svg' %}" alt="" />
               Bütün VIP elanlar
             </button>
           </div>
         </div> -->
       </section>
-      <section class="for_banner_2">
+      <section class="s-bot banner-mob-none">
         <a href="">
-          <img src="assets/img/example/banner2.png" alt="" class="w-100" />
+          <img src="{% static 'web/img/example/banner2.png' %}" alt="" class="w-100" />
         </a>
       </section>
       <section>
@@ -1137,7 +1161,7 @@
               style="padding: 0 !important"
             >
               <span class="center-vertical"> Yeni elanlar </span>
-              <form class="sort-filters-desktop" style="margin-right: 100px">
+              <form class="sort-filters-desktop-form">
                 <div class="form-group sort__select">
                   <select id="sort_input" class="selectpicker">
                     <option value="-created_at" selected>Əvvəlcə yeni</option>
@@ -1149,9 +1173,13 @@
               </form>
               <a
                 class="btn btn--icon btn--transparent"
-                href="{% url 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}"
-              >
-                <img src="assets/img/chevron_lmain.svg" alt="" /> Bütün yeni
+                href="#"
+                >
+                {% comment %}
+                <!-- href="{% url static 'web:catalog-vip' %}{% include 'partials/_request_GET.html' %}" -->
+                {% endcomment %}
+
+                <img src="{% static 'web/img/chevron_lmain.svg' %}" alt="" /> Bütün yeni
                 elanlar
               </a>
             </div>
@@ -1159,12 +1187,22 @@
         </div>
         <div class="main_container">
           <div class="wrapper">
+            <!-- <form class="sort_mobile">
+                        <div class="form-group sort__select  mb-4">
+                            <select id="sort_input" class="selectpicker">
+                                <option value="-created_at" selected>Əvvəlcə yeni</option>
+                                <option value="created_at">Əvvəlcə köhnə</option>
+                                <option value="-price">Əvvəlcə baha</option>
+                                <option value="price">Əvvəlcə ucuz</option>
+                            </select>
+                        </div>
+                    </form> -->
             <div class="post">
               <div class="post__list">
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1205,7 +1243,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1214,7 +1252,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1255,7 +1293,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1264,7 +1302,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1305,7 +1343,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1314,7 +1352,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1355,7 +1393,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1364,7 +1402,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1405,7 +1443,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1414,7 +1452,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1455,7 +1493,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1464,7 +1502,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1505,7 +1543,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1514,7 +1552,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1555,7 +1593,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1564,7 +1602,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1605,7 +1643,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1614,7 +1652,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1655,7 +1693,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1664,7 +1702,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1705,7 +1743,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1714,7 +1752,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1755,7 +1793,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1764,7 +1802,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1805,7 +1843,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1814,7 +1852,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1855,7 +1893,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1864,7 +1902,7 @@
                 <div class="post__item">
                   <div class="post__img">
                     <img
-                      src="https://turbo.azstatic.com/uploads/f460x343/2023%2F08%2F07%2F10%2F10%2F34%2Ff9645203-0d45-441d-a141-00d6c10505ec%2F40031_m6OWGaALhr8iWu6l884nNQ.jpg"
+                      src="{% static 'web/product_thumbnail/bina2.jpg' %}"
                       alt=""
                     />
                     <div class="post__attributes">
@@ -1905,7 +1943,7 @@
                           data-placement="top"
                           title="Kredit mümkündür"
                         >
-                          <img src="assets/img/barter.svg" alt="" />
+                          <img src="{% static 'web/img/barter.svg' %}" alt="" />
                         </span>
                       </div>
                     </div>
@@ -1917,18 +1955,18 @@
               <div class="sticky-top reklam">
                 <a href="" class="d-md-block d-none">
                   <img
-                    src="assets/img/example/banner3.png"
+                    src="{% static 'web/img/example/banner3.png' %}"
                     alt=""
                     class="w-100"
                   />
                 </a>
-                <a href="" class="d-md-none">
+                <!-- <a href="" class="d-md-none">
                   <img
-                    src="assets/img/example/banner-mob.png"
+                    src="{% static 'web/img/example/banner-mob.png"
                     alt=""
                     class="w-100"
                   />
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
