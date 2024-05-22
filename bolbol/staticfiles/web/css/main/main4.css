@@ -2,8 +2,9 @@
     .category {
         padding-top: 0px;
     }
+}
 
-    .post__list {
-        row-gap: 0px;
-    }
+
+.post__list {
+    row-gap: 0px;
 }
