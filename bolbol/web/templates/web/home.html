@@ -10,7 +10,12 @@
         your experience and security.
       </p>
     <![endif]-->
-
+      <style>
+        .category__item > img {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
     {% include 'partials/header.html' %}
     <main>
       <div class="main_container">
@@ -50,9 +55,13 @@
                     class="category__item"
                   >
                     <img
-                      src="{% static 'web/img/categories/bolbol_icons_neqliyyat.svg' %}"
-                      alt="category-icon"
+                      src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
+                      alt="category-icon" 
                       />
+                    <!-- <img
+                      src="{% static 'web/img/categories/bolbol_icons_transport.svg' %}"
+                      alt="category-icon"  style="width: 40px; height: 40px;"
+                      /> -->
                     Nəqliyyat
                   </a>
                   <a
@@ -102,14 +111,14 @@
                   </a>
                   <a href="" class="category__item">
                     <img
-                      src="{% static 'web/img/categories/bolbol_icons_village.svg' %}"
+                      src="{% static 'web/img/categories/bolbol_icons_home_gardens.svg' %}"
                       alt="category-icon"
                     />
                     Ev və bağ üçün
                   </a>
                   <a href="" class="category__item">
                     <img
-                      src="{% static 'web/img/categories/bolbol_icons_estate.svg' %}"
+                      src="{% static 'web/img/categories/bolbol_icons_meal.svg' %}"
                       alt="category-icon"
                     />
                     Ərzaq
@@ -130,7 +139,7 @@
                   </a>
                   <a href="" class="category__item">
                     <img
-                      src="{% static 'web/img/categories/bolbol_icons_other.svg' %}"
+                      src="{% static 'web/img/categories/bolbol_icons_others.svg' %}"
                       alt="category-icon"
                     />
                     Digər

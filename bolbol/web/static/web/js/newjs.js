@@ -2535,14 +2535,26 @@ markInput767.addEventListener("input", (e) => {
     markList767.textContent = "";
     newMarks.forEach((a) => {
       const li = document.createElement("li");
-      li.innerHTML = `
+
+      if (mark.toLowerCase() === a.name.toLowerCase()) {
+        li.innerHTML = `
       <div class="list-item">
-        <div class="list-logo">
+       <div class="list-logo">
           <img src=${a.image} />
         </div>
-        <p>${a.name}</p>
+        <p>${a.name} <div class="green_dot selected"></div></p>
       </div>
-    `;
+      `;
+      } else {
+        li.innerHTML = `
+      <div class="list-item">
+       <div class="list-logo">
+          <img src=${a.image} />
+        </div>
+        <p>${a.name} <div class="green_dot"></div></p>
+      </div>
+      `;
+      }
       markList767.append(li);
     });
   } else {
