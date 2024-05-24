@@ -16,6 +16,10 @@
         padding-bottom: 8px;
         border-radius: 0px 0px 4px 4px;
     }
+
+    form .form-check label {
+        transition: 0s;
+    }
 }
 
 .s-bot {

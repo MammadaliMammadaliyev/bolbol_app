@@ -2,7 +2,6 @@ const marksArr = [
   {
     name: "Abarth",
     model: ["595"],
-    popular: true,
     image:
       "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F17%2F12%2F28%2F04%2Fabffa099-dd57-486e-8757-3b88f47124c9%2Fabarth%4034x.png",
   },
@@ -31,6 +30,7 @@ const marksArr = [
       "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F17%2F12%2F28%2F49%2F7910541b-3fd3-4466-9208-884f241719e6%2Falfa%4034x.png",
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F17%2F12%2F31%2F01%2F39a381ca-8820-4b18-ae84-32664c4d9e22%2Faudi_-%20logo-100x62%4034x.png",
     name: "Audi",
     model: [
       "100",
@@ -208,9 +208,10 @@ const marksArr = [
       "i8",
       "iX",
     ],
+    image: 
+    "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F49%2F07%2F31cc0b93-8144-4916-8a21-919d963d0525%2F1200px-BMW_logo_%28gray%29.svg%4054x.png"
   },
   {
-    popular: true,
     name: "BMW Alpina",
     model: ["B10", "B7"],
   },
@@ -511,6 +512,8 @@ const marksArr = [
       "Ranger",
     ],
     name: "Ford",
+    popular: true,
+    image: "https://turbo.azstatic.com/media/W1siZiIsIjIwMTMvMDYvMTQvMjAvNDMvMzMvNDM0L0ZvcmQucG5nIl0sWyJwIiwidGh1bWIiLCI2MHgiXV0?sha=9e1ad2ef45808800"
   },
   {
     model: ["BJ6486B1DBA-2", "Forland", "Ollin"],
@@ -666,6 +669,7 @@ const marksArr = [
     model: ["H2", "H3"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F53%2F24%2Fc163753b-fe58-4501-9b34-8b26ad3cf092%2Fhyundai-motor-company-2%20copy%4054x.png",
     popular: true,
     name: "Hyundai",
     model: [
@@ -733,7 +737,6 @@ const marksArr = [
     model: ["Scout"],
   },
   {
-    popular: true,
     name: "Infiniti",
     model: [
       "EX-series",
@@ -819,7 +822,6 @@ const marksArr = [
     ],
   },
   {
-    popular: true,
     name: "Jaguar",
     model: [
       "E-Pace",
@@ -917,6 +919,8 @@ const marksArr = [
     model: ["LX", "SD"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F50%2F49%2F936b5858-fc12-4591-b7b0-5ab6185901f1%2F1280px-KIA_logo3.svg%4054x.png",
+    popular: true,
     name: "Kia",
     model: [
       "Avella",
@@ -978,6 +982,8 @@ const marksArr = [
     model: ["Blueberry", "X-boss"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F52%2F52%2F3ff4b2cf-b02a-4635-96be-4aa85d7ef6f4%2FBitmap%4054x.png",
+    popular: true,
     name: "LADA (VAZ)",
     model: [
       "2101",
@@ -1190,6 +1196,8 @@ const marksArr = [
     model: ["250R", "250S"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F53%2F52%2Fc0231997-84f3-4e49-8a46-15d634db7502%2Fmercedes-benz-9%4054x.png",
+    popular: true,
     name: "Mercedes",
     model: [
       "170 V",
@@ -1640,6 +1648,8 @@ const marksArr = [
     model: ["Ninja"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F54%2F26%2F86e211e9-0113-49ae-8785-12a96e1c0acc%2Fopel-2%4054x.png",
+    popular: true,
     name: "Opel",
     model: [
       "Antara",
@@ -1931,6 +1941,8 @@ const marksArr = [
     model: ["Dogan", "Kartal", "Sahin"],
   },
   {
+    image: "https://turbo.azstatic.com/uploads/makelogo/2021%2F05%2F18%2F16%2F54%2F44%2F9d109024-d1c6-436c-a735-865be0b23edc%2Ftoyota%20copy%203%4054x.png",
+    popular: true,
     name: "Toyota",
     model: [
       "Alphard",
