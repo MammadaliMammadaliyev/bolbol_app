@@ -28,7 +28,7 @@ var categoriesFunc;
   }
 })();
 
-$(document).on("click", "#mobi_all_reset_btn", function (e) {
-  e.preventDefault()
-  history.go(-1);
-});
+// $(document).on("click", "#mobi_all_reset_btn", function (e) {
+//   e.preventDefault()
+//   history.go(-1);
+// });

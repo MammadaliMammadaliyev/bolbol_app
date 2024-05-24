@@ -3130,6 +3130,9 @@ carMarks.addEventListener("click", (e) => {
     const li = document.createElement("li");
     li.textContent = a;
     modelList.append(li);
+    newMarksWrapper.style.display = "none";
+    showAllMarks.style.display = "none";
+    afterMarksSelected.style.display = "block";
   });
 });
 modelList.addEventListener("click", (e) => {
@@ -3242,6 +3245,12 @@ document.getElementById("mobi_all_reset_btn").addEventListener("click", () => {
   respInput1.checked = true;
   respInput2.checked = false;
   respInput3.checked = false;
+
+  document
+  .querySelectorAll(".form-group.form-material.active")
+  .forEach((item) => {
+    item.classList.remove("active");
+  });
 });
 
 const form = document.querySelector(".form-wrapper");
