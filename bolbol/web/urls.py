@@ -1,11 +1,5 @@
 from django.urls import path
-from .views import (
-    HomeView,
-    CategoryTransportView,
-    TransportFiltersView,
-    CategoryEstateView,
-    CategoryElectronicsView,
-)
+from .views import *
 
 
 app_name = "web"
@@ -36,4 +30,64 @@ urlpatterns = [
         CategoryElectronicsView.as_view(),
         name="category-electronics"
     ),
+    path(
+        "ushaq-alemi/",
+        CategoryBabyWorldView.as_view(),
+        name="category-baby_world"
+    ),
+    path(
+        "geyim/",
+        CategoryClothesView.as_view(),
+        name="category-clothes"
+    ),
+    path(
+        "kosmetika-ve-saglamliq/",
+        CategoryCosmeticsView.as_view(),
+        name="category-cosmetic"
+    ),
+    path(
+        "kosmetika-ve-saglamliq/",
+        CategoryCosmeticsView.as_view(),
+        name="category-cosmetics"
+    ),
+    path(
+        "ish-elanlari/",
+        CategoryJobVacanciesView.as_view(),
+        name="category-job_vacancies"
+    ),
+    path(
+        "ev-ve-bag/",
+        CategoryHomeGardenView.as_view(),
+        name="category-home_garden"
+    ),
+    path(
+        "erzaq/",
+        CategoryMealView.as_view(),
+        name="category-meal"
+    ),
+    path(
+        "heyvan-ve-bitki/",
+        CategoryAnimalsPlantsView.as_view(),
+        name="category-animals_plants"
+    ),
+    path(
+        "idman-musiqi-hobbi/",
+        CategorySportMusicHobbyView.as_view(),
+        name="category-sport_music_hobby"
+    ),
+    path(
+        "diger/",
+        CategoryOthersView.as_view(),
+        name="category-others"
+    ),
+    path(
+        "xidmetler/",
+        CategoryServicesView.as_view(),
+        name="category-services"
+    ),
+    path(
+        "elektronika/telefonlar/",
+        SubcategoryTelephonesView.as_view(),
+        name="subcategory-telephones"
+    )
 ]
