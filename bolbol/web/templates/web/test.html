@@ -1,78 +1,37 @@
 <script>
-  window.jQuery ||
-    document.write(
-      '<script src="{% static 'web/libs/jquery/jquery-3.5.1.min.js"><\/script>'
-    );
+  document.addEventListener("DOMContentLoaded", function () {
+    var carousel = new Flickity(".carousel", {
+      prevNextButtons: false, // Отключаем кнопки навигации
+      pageDots: false, // Отключаем точки навигации
+      contain: true, // Принудительно ограничиваем ширину контейнера
+      draggable: true, // Запрещаем перетаскивание для скроллинга
+      cellAlign: "left", // Выравниваем элементы к левому краю
+    });
+    
+    // Автоматический скролл к последнему элементу
+    carousel.select(0);
+  });
 </script>
 
-<script
-  src="{% static 'web/libs/popper.js/popper.min.js' %}"
-  type="text/javascript"
-></script>
-
-<script
-  src="{% static 'web/libs/bootstrap/bootstrap.min.js' %}"
-  type="text/javascript"
-  charset="utf-8"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/sorttable/sorttable.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/lightslider/lightslider.js' %}"
-></script>
-
-<script type="text/javascript" src="{% static 'web/libs/zoom/zoom.js' %}"></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/sumogallery/jquery.sumogallery.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/typed.js/typed.min.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/inputmask/jquery.inputmask.min.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/bootstrap-select/bootstrap-select.min.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/moment.js/moment.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.js' %}"
-></script>
-
-<script
-  type="text/javascript"
-  src="{% static 'web/libs/jquery-ui/jquery-ui.min.js' %}"
-></script>
-
-<script src="{% static 'web/js/all.js' %}" type="text/javascript"></script>
+<script src="assets/js/all.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+<script src="{% static 'web/js/emlak.js' %}"></script>
+<!-- <script src="assets/js/descFilters.js"></script> -->
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
-    <script>
-        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-    </script>-->
+   <script>
+       window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+       ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+   </script>-->
 <script
   src="https://www.google-analytics.com/analytics.js"
   async
   defer
 ></script>
-<script type="text/javascript" src="{% static 'web/libs/typed.js/typed.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/descFilters.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/emlak.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/emlakSeher.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/filterTarix.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/kategory.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/newjs.js' %}"></script>
