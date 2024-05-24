@@ -27,13 +27,13 @@
             ><img src="{% static 'web/img/back-icon.svg' %}" alt=""
           /></a>
           <div class="filterHeading__title">Filtrlər</div>
-          <button
+          <a href="{% url 'web:home' %}"><button
             type="reset"
             class="btn btn--transparent justify-content-end"
             id="mobi_all_reset_btn"
           >
             Sıfırla
-          </button>
+          </button></a>
         </section>
         <div id="citySelect">
           <label id="cityLabel">Şəhər</label>
@@ -644,6 +644,7 @@
 
     <script src="{% static 'web/js/all.js' %}" type="text/javascript"></script>
     <script src="{% static 'web/js/all_copy.js' %}" type="text/javascript"></script>
+    <script src="{% static 'web/js/code4.js' %}" type="text/javascript"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
         <script>

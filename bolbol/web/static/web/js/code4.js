@@ -1,5 +1,5 @@
 // hide categories (on mobile)
-console.log($(".category__item").length)
+
 var categoriesFunc;
 (categoriesFunc = function categoriesFunc() {
   if ($(".category").length > 0) {
@@ -27,3 +27,8 @@ var categoriesFunc;
     }
   }
 })();
+
+$(document).on("click", "#mobi_all_reset_btn", function (e) {
+  e.preventDefault()
+  history.go(-1);
+});
