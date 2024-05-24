@@ -11626,13 +11626,32 @@ form
     width: 100%;
     height: 100%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     /* padding-top: 5px; */
     z-index: 1;
     font-size: 16px;
     color: #014c52;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+  }
+
+  .emlak_mobi_buy label p.no-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start !important;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 10px !important;
+    /* padding-top: 5px; */
+    z-index: 1;
+    font-size: 16px;
+    color: #808080;
     border: 1px solid #ccc;
     background-color: #ffffff;
   }
@@ -11663,9 +11682,9 @@ form
     border: 1px solid #faef96 !important;
   }
   .emlak_mobi_buy.n2 label input:checked + p {
-    background-color: #e8ffea !important;
+    /* background-color: #e8ffea !important;
     color: #0e6910 !important;
-    border: 1px solid #0e6910 !important;
+    border: 1px solid #0e6910 !important; */
   }
 
   #emlak_mobi_alqi_input_mean:checked + p {
@@ -11754,12 +11773,13 @@ form
     border-radius: 7px;
     width: 23% !important;
     height: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     border: none;
     outline: none;
     cursor: pointer;
-    color: #0e6910 !important;
-    border: 1px solid #0e6910 !important;
+    background-color: #014c52;
+    /* color: #0e6910 !important; */
+    /* border: 1px solid #0e6910 !important; */
     font-size: 15px;
     margin-left: auto;
   }
@@ -11836,14 +11856,14 @@ form
   }
 }
 .custom_btn_w_border_green {
-  background-color: #e8ffea !important;
+  /* background-color: #e8ffea !important;
   color: #0e6910 !important;
-  border: 1px #0e6910 solid !important;
+  border: 1px #0e6910 solid !important; */
 }
 .custom_btn_w_border {
-  background-color: #fff !important;
+  /* background-color: #fff !important;
   color: #0e6910 !important;
-  border: 1px #0e6910 solid !important;
+  border: 1px #0e6910 solid !important; */
 }
 .unersal_inputs input {
   padding-top: 15px;
@@ -13447,10 +13467,10 @@ transform: translateY(calc(-50% - 2px)); */
     border: none;
   }
   .kat_filters_mobile .additional_chekings_item.green {
-    border: 1px solid #0e6910;
+    /* border: 1px solid #0e6910; */
   }
   .kat_filters_mobile .additional_chekings_item label {
-    color: #0e6910 !important;
+    /* color: #0e6910 !important; */
   }
   .kategoriya_filters .kat_filters_mobile {
     display: flex;

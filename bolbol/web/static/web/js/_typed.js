@@ -44,3 +44,19 @@ if ($('#estate-typed').length > 0) {
         loop: true
     });
 }
+if ($('#electronics-typed').length > 0) {
+    var typed = new Typed('#electronics-typed', {
+        strings: [
+            "Nərimanov metrosu, 2 otaqlı",
+            "28 May metrosu, 3 otaqlı",
+            "Elmlər Akademiyası metrosu, 1 otaqlı",
+            "Xətai metrosu, 4 otaqlı",
+            "Gənclik metrosu, 2 otaqlı"
+        ],
+        typeSpeed: 40,
+        backSpeed: 20,
+        attr: 'placeholder',
+        bindInputFocusEvents: true,
+        loop: true
+    });
+}

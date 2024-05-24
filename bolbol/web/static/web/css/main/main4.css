@@ -20,6 +20,10 @@
     form .form-check label {
         transition: 0s;
     }
+
+    .additional_chekings_emlak {
+        font-size: 14px;
+    }
 }
 
 .s-bot {
